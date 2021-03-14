@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chocolate_chiptunes.Controller">
-    <children>
-        <Label fx:id="label" text="Label" />
-    </children>
-</StackPane>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="106.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="0.0" prefWidth="177.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="206.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="111.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="127.0" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="319.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="203.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox prefHeight="13.0" prefWidth="159.0" GridPane.columnSpan="4">
+         <children>
+            <StackPane prefHeight="13.0" prefWidth="639.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Chocolate Chiptunes">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <HBox prefHeight="22.0" prefWidth="13.0">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="22.0" prefWidth="0.0">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_RIGHT" prefHeight="22.0" prefWidth="0.0">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="19.0" prefWidth="106.0" style="-fx-border-width: 1px; -fx-border-color: gray;" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <children>
+            <Label text="Instruments" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="177.0" style="-fx-border-width: 1px; -fx-border-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <children>
+            <Label text="Instrument Editor" />
+         </children>
+      </VBox>
+      <VBox maxHeight="-Infinity" prefHeight="148.0" prefWidth="106.0" style="-fx-border-color: gray;" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <children>
+            <ListView prefHeight="162.0" prefWidth="104.0" style="-fx-border-width: 0px;" />
+         </children>
+      </VBox>
+      <VBox maxHeight="-Infinity" prefHeight="147.0" prefWidth="177.0" style="-fx-border-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+      <FlowPane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" rowValignment="TOP" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <children>
+            <HBox prefHeight="76.0" prefWidth="317.0" />
+            <HBox prefHeight="63.0" prefWidth="317.0" />
+            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="206.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" text="Piano Roll" />
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="176.0" text="Arrangement" />
+               </children>
+            </HBox>
+         </children>
+      </FlowPane>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="108.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</GridPane>
