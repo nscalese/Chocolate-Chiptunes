@@ -15,6 +15,7 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("chocolate_chiptunes.fxml"));
 		primaryStage.setTitle("Chocolate Chiptunes");
 		primaryStage.setScene(new Scene(root));
+		primaryStage.setMaximized(true);
 		primaryStage.show();
 	}
 	
