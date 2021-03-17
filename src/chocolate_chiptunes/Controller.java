@@ -1,14 +1,27 @@
 package chocolate_chiptunes;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 
 public class Controller {
+	
+	@FXML
+	private ScrollPane pianoRoll;
+	
+	@FXML
+	private ScrollPane arrangementEditor;
 
 	@FXML
-	private Label label;
+	public void showPianoRoll(ActionEvent event) {
+		pianoRoll.setVisible(true);
+		arrangementEditor.setVisible(false);
+	}
 	
-	public void initialize() {
-		label.setText("This is the start of our JavaFX project.\nRight now, it's just a measely label, but we'll have a full fledged UI soon enough.");
+	@FXML
+	public void showArrangementEditor(ActionEvent event) {
+		pianoRoll.setVisible(false);
+		arrangementEditor.setVisible(true);
 	}
 }
