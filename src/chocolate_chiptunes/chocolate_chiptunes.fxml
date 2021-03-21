@@ -336,8 +336,8 @@
                         </Label>
                         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" style="-fx-font-size: 25;" styleClass="bpm-button" text="-" />
-                              <Label id="bpm" text="120">
+                              <Button mnemonicParsing="false" onAction="#decrementBPM" style="-fx-font-size: 25;" styleClass="bpm-button" text="-" />
+                              <Label id="bpm" fx:id="bpm" text="120">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -348,7 +348,7 @@
                                     <Insets left="5.0" right="5.0" />
                                  </padding>
                               </Label>
-                              <Button mnemonicParsing="false" styleClass="bpm-button" text="+" />
+                              <Button mnemonicParsing="false" onAction="#incrementBPM" styleClass="bpm-button" text="+" />
                            </children>
                         </HBox>
                      </children>
