@@ -21,6 +21,9 @@ public class Controller {
 	
 	@FXML
 	private ScrollPane arrangementEditor;
+	
+	@FXML
+	private Label bpm;
 
 	@FXML
 	private Button instrument1;
@@ -54,6 +57,21 @@ public class Controller {
 		pianoRoll.setVisible(false);
 		arrangementEditor.setVisible(true);
 	}
+	
+	@FXML
+	public void incrementBPM() {
+		int bpmValue = Integer.parseInt(bpm.getText()), newBPMValue = bpmValue + 1;		
+		
+		bpm.setText(String.valueOf(newBPMValue));
+	}
+	
+	@FXML
+	public void decrementBPM() {
+		int bpmValue = Integer.parseInt(bpm.getText()), newBPMValue = bpmValue - 1;
+		
+		
+		bpm.setText(String.valueOf(newBPMValue));
+	}	
 
 	@FXML
 	public void onSliderChanged() {
