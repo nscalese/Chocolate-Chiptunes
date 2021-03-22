@@ -7,7 +7,6 @@ public class Synthesizer extends Circuit {
 
     public com.jsyn.Synthesizer synth;
     private LineOut out;
-    private UnitOscillator currentOsc;
     private Instrument[] instruments = new Instrument[4];
     private int selectedInstrumentID;
     private int instrumentCount = 1;
@@ -25,7 +24,7 @@ public class Synthesizer extends Circuit {
         instruments[0].getOscillator().output.connect(0, out.input, 0);
         instruments[0].getOscillator().output.connect(0, out.input, 1);
 
-        out.start();
+
     }
 
     public void createInstrument() {
@@ -44,6 +43,10 @@ public class Synthesizer extends Circuit {
 
     public void setSelectedInstrument(int id) {
         selectedInstrumentID = id;
+    }
+
+    public int getInstrumentCount() {
+        return instrumentCount;
     }
 
     public void resetOut() {

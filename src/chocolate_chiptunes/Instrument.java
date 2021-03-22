@@ -16,23 +16,25 @@ public class Instrument {
     private TriangleOscillator triangle = new TriangleOscillator();
     private SawtoothOscillator saw = new SawtoothOscillator();
 
+    public static final int ATTACK_VALUE = 0;
+    public static final int DECAY_VALUE = 2;
+    public static final int SUSTAIN_VALUE = 4;
+    public static final int RELEASE_VALUE = 6;
+
+
     public Instrument() {
         waveform = sine;
 
         /* Standard ADSR envelope (https://en.wikipedia.org/wiki/Envelope_(music)#ADSR)
-        *  envelopeData[0] = attack value
-        *  envelopeData[2] = decay value
-        *  envelopeData[4] = sustain value
-        *  envelopeData[6] = release value
         *  envelopeData[1, 3, 5, 7] represent amplitude (this doesn't change)
         */
-        envelopeData[0] = 0.5;
+        envelopeData[ATTACK_VALUE] = 0.5;
         envelopeData[1] = 1.0;
-        envelopeData[2] = 0.25;
+        envelopeData[DECAY_VALUE] = 0.25;
         envelopeData[3] = 0.6;
-        envelopeData[4] = 0.25;
+        envelopeData[SUSTAIN_VALUE] = 0.25;
         envelopeData[5] = 0.6;
-        envelopeData[6] = 0.5;
+        envelopeData[RELEASE_VALUE] = 0.5;
         envelopeData[7] = 0.0;
 
         envelope = new SegmentedEnvelope(envelopeData);
@@ -58,5 +60,9 @@ public class Instrument {
     public void updateEnvelope(double[] data) {
         this.envelopeData = data;
         envelope.write(this.envelopeData);
+    }
+
+    public double[] getEnvelopeData() {
+        return envelopeData;
     }
 }

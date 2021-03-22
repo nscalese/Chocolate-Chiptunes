@@ -1,11 +1,14 @@
 package chocolate_chiptunes;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 
 public class Controller {
 
@@ -20,6 +23,9 @@ public class Controller {
 	private ScrollPane arrangementEditor;
 
 	@FXML
+	private Button instrument1;
+
+	@FXML
 	private Slider attackSlider;
 
 	@FXML
@@ -32,7 +38,10 @@ public class Controller {
 	private Slider releaseSlider;
 
 	@FXML
-	private Button addInstrument;
+	private Button btnAddInstrument;
+
+	@FXML
+	private GridPane instrumentList;
 
 	@FXML
 	public void showPianoRoll(ActionEvent event) {
@@ -48,8 +57,6 @@ public class Controller {
 
 	@FXML
 	public void onSliderChanged() {
-		synth.setSelectedInstrument(selectedInstrumentID);
-
 		double attackValue = (double) attackSlider.getValue();
 		double decayValue = (double) decaySlider.getValue();
 		double sustainValue = (double) sustainSlider.getValue();
@@ -62,13 +69,48 @@ public class Controller {
 				releaseValue, 0.0
 		};
 
-		synth.resetOut();
 		synth.getSelectedInstrument().updateEnvelope(envelopeData);
+	}
+
+	@FXML
+	public void onAddInstrumentClick(MouseEvent e) {
+		int instrumentCount = synth.getInstrumentCount();
+
+		if(instrumentCount < 4) {
+			synth.createInstrument();
+			instrumentCount++;
+
+			Button newInstrument = new Button("Instrument " + instrumentCount);
+			newInstrument.setUserData(instrumentCount - 1);
+			newInstrument.setId("instrument" + instrumentCount);
+			newInstrument.setOnMouseClicked(event -> {
+				onInstrumentButtonClick(event);
+			});
+			newInstrument.setMaxHeight(btnAddInstrument.getMaxHeight());
+			newInstrument.setMaxWidth(btnAddInstrument.getMaxWidth());
+
+			instrumentList.getChildren().remove(btnAddInstrument);
+			instrumentList.add(newInstrument, 0, instrumentCount - 1);
+			instrumentList.add(btnAddInstrument, 0, instrumentCount);
+		} else {
+			System.out.println("Max instruments");
+		}
 
 	}
 
 	@FXML
-	public void onInstrumentButtonClick() {
+	public void onInstrumentButtonClick(MouseEvent e) {
+		Object node = e.getSource();
+		Button instrument = (Button)node;
 
+		selectedInstrumentID = Integer.parseInt(instrument.getUserData().toString());
+		synth.setSelectedInstrument(selectedInstrumentID);
+
+		double[] envelopeData = synth.getSelectedInstrument().getEnvelopeData();
+		attackSlider.setValue(envelopeData[Instrument.ATTACK_VALUE]);
+		System.out.println("Attack: " + envelopeData[Instrument.ATTACK_VALUE]);
+		decaySlider.setValue(envelopeData[Instrument.DECAY_VALUE]);
+		sustainSlider.setValue(envelopeData[Instrument.SUSTAIN_VALUE]);
+		releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
 	}
 }
