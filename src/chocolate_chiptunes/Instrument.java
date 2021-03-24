@@ -23,6 +23,7 @@ public class Instrument {
 
 
     public Instrument() {
+        // Set the default waveform of a new instrument to a sine wave
         waveform = sine;
 
         /* Standard ADSR envelope (https://en.wikipedia.org/wiki/Envelope_(music)#ADSR)
@@ -37,9 +38,11 @@ public class Instrument {
         envelopeData[RELEASE_VALUE] = 0.5;
         envelopeData[7] = 0.0;
 
+        // Set the envelope of the instrument
         envelope = new SegmentedEnvelope(envelopeData);
     }
 
+    // Depending on the currently selected waveform, set the instrument
     public void setWaveform(int waveformID) {
         switch(waveformID) {
             case 0: // Sine
@@ -53,15 +56,18 @@ public class Instrument {
         }
     }
 
+    // Return the currently selected waveform
     public UnitOscillator getOscillator() {
         return this.waveform;
     }
 
+    // Update the envelope when the user changes any of the ADSR values
     public void updateEnvelope(double[] data) {
         this.envelopeData = data;
         envelope.write(this.envelopeData);
     }
 
+    // Return the envelope values
     public double[] getEnvelopeData() {
         return envelopeData;
     }

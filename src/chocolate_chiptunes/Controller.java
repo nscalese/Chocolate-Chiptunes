@@ -56,25 +56,29 @@ public class Controller {
 	private ToggleButton sawButton;
 
 
+	// Show the piano roll when the piano roll button is pressed
 	@FXML
 	public void showPianoRoll(ActionEvent event) {
 		pianoRoll.setVisible(true);
 		arrangementEditor.setVisible(false);
 	}
-	
+
+	// Show the arrangement when the arrangement button is pressed
 	@FXML
 	public void showArrangementEditor(ActionEvent event) {
 		pianoRoll.setVisible(false);
 		arrangementEditor.setVisible(true);
 	}
-	
+
+	// Increment the BPM value when the BPM slider is changed
 	@FXML
 	public void incrementBPM() {
 		int bpmValue = Integer.parseInt(bpm.getText()), newBPMValue = bpmValue + 1;		
 		
 		bpm.setText(String.valueOf(newBPMValue));
 	}
-	
+
+	// Decrement the BPM value when the BPM slider is changed
 	@FXML
 	public void decrementBPM() {
 		int bpmValue = Integer.parseInt(bpm.getText()), newBPMValue = bpmValue - 1;
@@ -83,14 +87,19 @@ public class Controller {
 		bpm.setText(String.valueOf(newBPMValue));
 	}
 
+	// Add a new instrument when the add instrument button is clicked
 	@FXML
 	public void onAddInstrumentClick(MouseEvent e) {
+		// Get the current instrument count
 		int instrumentCount = synth.getInstrumentCount();
 
+		// If there are 4 instruments or more, move on
 		if(instrumentCount < 4) {
+			// Create the instrument and increment the count
 			synth.createInstrument();
 			instrumentCount++;
 
+			// Create a new Instrument button in the list and add the necessary functionality
 			Button newInstrument = new Button("Instrument " + instrumentCount);
 			newInstrument.setUserData(instrumentCount - 1);
 			newInstrument.setId("instrument" + instrumentCount);
@@ -100,6 +109,7 @@ public class Controller {
 			newInstrument.setMaxHeight(btnAddInstrument.getMaxHeight());
 			newInstrument.setMaxWidth(btnAddInstrument.getMaxWidth());
 
+			// Make sure the instrument is added to the list correctly
 			instrumentList.getChildren().remove(btnAddInstrument);
 			instrumentList.add(newInstrument, 0, instrumentCount - 1);
 			instrumentList.add(btnAddInstrument, 0, instrumentCount);
@@ -109,14 +119,18 @@ public class Controller {
 
 	}
 
+	// When an instrument in the list is clicked, change the envelope values
 	@FXML
 	public void onInstrumentButtonClick(MouseEvent e) {
+		// Get the button object of the current instrument
 		Object node = e.getSource();
 		Button instrument = (Button)node;
 
+		// Get the ID associated with the button
 		selectedInstrumentID = Integer.parseInt(instrument.getUserData().toString());
 		synth.setSelectedInstrument(selectedInstrumentID);
 
+		// Get the envelope data of the selected instrument and set the values of the sliders to reflect the values
 		double[] envelopeData = synth.getSelectedInstrument().getEnvelopeData();
 		attackSlider.setValue(envelopeData[Instrument.ATTACK_VALUE]);
 		System.out.println("Attack: " + envelopeData[Instrument.ATTACK_VALUE]);
@@ -125,22 +139,28 @@ public class Controller {
 		releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
 	}
 
+	// Change the waveform of the current instrument when a waveform is selected
 	@FXML
 	public void onWaveformClick(MouseEvent e) {
+		// Get the button object of the current instrument
 		Object node = e.getSource();
 		Button waveform = (Button)node;
 
+		// Retrieve the waveform ID and set the waveform of the instrument
 		int selectedWaveformID = Integer.parseInt(waveform.getUserData().toString());
 		synth.getSelectedInstrument().setWaveform(selectedWaveformID);
 	}
 
+	// Update the envelope of the instrument when the user changes a slider value
 	@FXML
 	public void onSliderChanged() {
+		// Get the values of the individual sliders
 		double attackValue = (double) attackSlider.getValue();
 		double decayValue = (double) decaySlider.getValue();
 		double sustainValue = (double) sustainSlider.getValue();
 		double releaseValue = (double) releaseSlider.getValue();
 
+		// Place the values in a double array
 		double[] envelopeData = {
 				attackValue, 1.0,
 				decayValue, 0.6,
@@ -148,6 +168,7 @@ public class Controller {
 				releaseValue, 0.0
 		};
 
+		// Update the envelope data of the instrument
 		synth.getSelectedInstrument().updateEnvelope(envelopeData);
 	}
 
