@@ -87,18 +87,19 @@
                               <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
+
                         <HBox alignment="TOP_CENTER">
                            <children>
-                              <Button mnemonicParsing="false" prefWidth="75.0" text="Sin">
+                              <ToggleButton fx:id="sineButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Sine" userData="0">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefWidth="75.0" text="Square">
+                              </ToggleButton>
+                              <ToggleButton fx:id="squareButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Square" userData="1">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
-                              </Button>
+                              </ToggleButton>
                            </children>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -106,16 +107,16 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER">
                            <children>
-                              <Button mnemonicParsing="false" prefWidth="75.0" text="Triangle">
+                              <ToggleButton fx:id="triangleButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Triangle" userData="2">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefWidth="75.0" text="Sawtooth">
+                              </ToggleButton>
+                              <ToggleButton fx:id="sawButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Sawtooth" userData="3">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
-                              </Button>
+                              </ToggleButton>
                            </children>
                            <VBox.margin>
                               <Insets top="10.0" />

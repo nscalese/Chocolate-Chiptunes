@@ -3,10 +3,7 @@ package chocolate_chiptunes;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
@@ -26,6 +23,12 @@ public class Controller {
 	private Label bpm;
 
 	@FXML
+	private Button btnAddInstrument;
+
+	@FXML
+	private GridPane instrumentList;
+
+	@FXML
 	private Button instrument1;
 
 	@FXML
@@ -41,10 +44,17 @@ public class Controller {
 	private Slider releaseSlider;
 
 	@FXML
-	private Button btnAddInstrument;
+	private ToggleButton sineButton;
 
 	@FXML
-	private GridPane instrumentList;
+	private ToggleButton squareButton;
+
+	@FXML
+	private ToggleButton triangleButton;
+
+	@FXML
+	private ToggleButton sawButton;
+
 
 	@FXML
 	public void showPianoRoll(ActionEvent event) {
@@ -71,23 +81,6 @@ public class Controller {
 		
 		
 		bpm.setText(String.valueOf(newBPMValue));
-	}	
-
-	@FXML
-	public void onSliderChanged() {
-		double attackValue = (double) attackSlider.getValue();
-		double decayValue = (double) decaySlider.getValue();
-		double sustainValue = (double) sustainSlider.getValue();
-		double releaseValue = (double) releaseSlider.getValue();
-
-		double[] envelopeData = {
-				attackValue, 1.0,
-				decayValue, 0.6,
-				sustainValue, 0.6,
-				releaseValue, 0.0
-		};
-
-		synth.getSelectedInstrument().updateEnvelope(envelopeData);
 	}
 
 	@FXML
@@ -131,4 +124,31 @@ public class Controller {
 		sustainSlider.setValue(envelopeData[Instrument.SUSTAIN_VALUE]);
 		releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
 	}
+
+	@FXML
+	public void onWaveformClick(MouseEvent e) {
+		Object node = e.getSource();
+		Button waveform = (Button)node;
+
+		int selectedWaveformID = Integer.parseInt(waveform.getUserData().toString());
+		synth.getSelectedInstrument().setWaveform(selectedWaveformID);
+	}
+
+	@FXML
+	public void onSliderChanged() {
+		double attackValue = (double) attackSlider.getValue();
+		double decayValue = (double) decaySlider.getValue();
+		double sustainValue = (double) sustainSlider.getValue();
+		double releaseValue = (double) releaseSlider.getValue();
+
+		double[] envelopeData = {
+				attackValue, 1.0,
+				decayValue, 0.6,
+				sustainValue, 0.6,
+				releaseValue, 0.0
+		};
+
+		synth.getSelectedInstrument().updateEnvelope(envelopeData);
+	}
+
 }

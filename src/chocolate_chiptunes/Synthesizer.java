@@ -30,7 +30,7 @@ public class Synthesizer extends Circuit {
     public void createInstrument() {
         instrumentCount++;
 
-        if(instrumentCount < 4) {
+        if(instrumentCount <= 4) {
             instruments[instrumentCount - 1] = new Instrument();
         } else {
             System.out.println("Max instruments created.");
