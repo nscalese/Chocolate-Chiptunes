@@ -90,16 +90,23 @@
 
                         <HBox alignment="TOP_CENTER">
                            <children>
-                              <ToggleButton fx:id="sineButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Sine" userData="0">
+
+                              <RadioButton fx:id="sineButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" selected="true" text="Sine" userData="0">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
-                              </ToggleButton>
-                              <ToggleButton fx:id="squareButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Square" userData="1">
+                                  <toggleGroup>
+                                      <ToggleGroup fx:id="waveformGroup"/>
+                                  </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="squareButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Square" userData="1">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
-                              </ToggleButton>
+                                  <toggleGroup>
+                                      <fx:reference source="waveformGroup"/>
+                                  </toggleGroup>
+                              </RadioButton>
                            </children>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -107,16 +114,22 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER">
                            <children>
-                              <ToggleButton fx:id="triangleButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Triangle" userData="2">
+                              <RadioButton fx:id="triangleButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Triangle" userData="2">
                                  <HBox.margin>
                                     <Insets right="10.0" />
                                  </HBox.margin>
-                              </ToggleButton>
-                              <ToggleButton fx:id="sawButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Sawtooth" userData="3">
+                                  <toggleGroup>
+                                      <fx:reference source="waveformGroup"/>
+                                  </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="sawButton" mnemonicParsing="false" onMouseClicked="#onWaveformClick" prefWidth="75.0" text="Saw" userData="3">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
-                              </ToggleButton>
+                                  <toggleGroup>
+                                      <fx:reference source="waveformGroup"/>
+                                  </toggleGroup>
+                              </RadioButton>
                            </children>
                            <VBox.margin>
                               <Insets top="10.0" />

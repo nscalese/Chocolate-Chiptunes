@@ -3,6 +3,10 @@ import com.jsyn.*;
 import com.jsyn.swing.*;
 import com.jsyn.unitgen.*;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.HashMap;
+
 public class Synthesizer extends Circuit {
 
     public com.jsyn.Synthesizer synth;
@@ -10,6 +14,17 @@ public class Synthesizer extends Circuit {
     private Instrument[] instruments = new Instrument[4];
     private int selectedInstrumentID;
     private int instrumentCount = 1;
+
+    public static final HashMap<Character, Double> KEY_FREQUENCIES = new HashMap<Character, Double>();
+
+    static {
+        final char[] KEYS = "q2w3er5t6y7uzsxdcvgbhnjm".toCharArray();
+        final int STARTING_KEY = 40;
+        for(int i = STARTING_KEY, key = 0; key < KEYS.length; i++, key++) {
+            KEY_FREQUENCIES.put(KEYS[key], Utils.Math.getKeyFrequency(i));
+        }
+
+    }
 
     public Synthesizer() {
         // Create the synth and line out
@@ -57,6 +72,20 @@ public class Synthesizer extends Circuit {
         return instrumentCount;
     }
 
+    // Disconnect the currently selected waveform
+    public void disconnectInstrument() {
+        synth.remove(instruments[selectedInstrumentID].getOscillator());
+        instruments[selectedInstrumentID].getOscillator().output.disconnect(0, out.input, 0);
+        instruments[selectedInstrumentID].getOscillator().output.disconnect(0, out.input, 1);
+    }
+
+    // Connect the currently selected waveform
+    public void connectInstrument() {
+        synth.add(instruments[selectedInstrumentID].getOscillator());
+        instruments[selectedInstrumentID].getOscillator().output.connect(0, out.input, 0);
+        instruments[selectedInstrumentID].getOscillator().output.connect(0, out.input, 1);
+    }
+
     // Reset output
     public void resetOut() {
         out.stop();
@@ -66,5 +95,14 @@ public class Synthesizer extends Circuit {
     // Stop the synth
     public void stopSynth() {
         synth.stop();
+    }
+
+    public void setKeyFrequency(char keyChar) {
+        instruments[selectedInstrumentID].getOscillator().frequency.set(KEY_FREQUENCIES.get(keyChar));
+        out.start();
+    }
+
+    public void stopOut() {
+        out.stop();
     }
 }

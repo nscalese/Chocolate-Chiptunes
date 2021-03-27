@@ -8,6 +8,8 @@ import com.jsyn.unitgen.*;
 public class Instrument {
 
     private UnitOscillator waveform;
+    private int waveformID;
+    private UnitOscillator[] waveformList = new UnitOscillator[4];
     private SegmentedEnvelope envelope;
     private double[] envelopeData = new double[8];
 
@@ -25,6 +27,7 @@ public class Instrument {
     public Instrument() {
         // Set the default waveform of a new instrument to a sine wave
         waveform = sine;
+        waveformID = 0;
 
         /* Standard ADSR envelope (https://en.wikipedia.org/wiki/Envelope_(music)#ADSR)
         *  envelopeData[1, 3, 5, 7] represent amplitude (this doesn't change)
@@ -44,16 +47,24 @@ public class Instrument {
 
     // Depending on the currently selected waveform, set the instrument
     public void setWaveform(int waveformID) {
-        switch(waveformID) {
-            case 0: // Sine
-                waveform = sine;
-            case 1: // Square
-                waveform = square;
-            case 2: // Triangle
-                waveform = triangle;
-            case 3: // Sawtooth
-                waveform = saw;
+        this.waveformID = waveformID;
+        System.out.println("Setting waveform of ID: " + waveformID);
+
+        if(waveformID == 0) {
+            waveform = sine;
+        } else if (waveformID == 1) {
+            waveform = square;
+        } else if (waveformID == 2) {
+            waveform = triangle;
+        } else if (waveformID == 3) {
+            waveform = saw;
+        } else {
+            System.out.println("Error in selecting waveform");
         }
+    }
+
+    public int getWaveformId() {
+        return waveformID;
     }
 
     // Return the currently selected waveform
