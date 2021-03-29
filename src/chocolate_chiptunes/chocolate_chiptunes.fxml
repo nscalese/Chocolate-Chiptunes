@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:id="mainGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onGridKeyPressed" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@chocolate_chiptunes.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chocolate_chiptunes.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@chocolate_chiptunes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chocolate_chiptunes.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="227.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="0.0" prefWidth="419.0" />
