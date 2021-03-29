@@ -10,6 +10,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 public class Controller {
+	
+	ActionLog actionLog = new ActionLog();
 
 	Synthesizer synth = new Synthesizer();
 
@@ -216,10 +218,10 @@ public class Controller {
 		if(event.isControlDown()) {
 			switch(keyCode) {
 			case Z:
-				System.out.println("Undo the last action.");
+				actionLog.Undo();
 				break;
 			case Y:
-				System.out.println("Redo the last action.");
+				actionLog.Redo();
 				break;
 			case S: 
 				if(event.isShiftDown())
