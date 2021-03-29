@@ -4,14 +4,21 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 public class Controller {
 
-	Synthesizer synth;
+	Synthesizer synth = new Synthesizer();
 
 	int selectedInstrumentID = 0;
+	
+	private boolean controlPressed = false;
+	
+	@FXML
+	private GridPane mainGrid;
 	
 	@FXML
 	private ScrollPane pianoRoll;
@@ -44,21 +51,17 @@ public class Controller {
 	private Slider releaseSlider;
 
 	@FXML
-	private RadioButton sineButton;
+	private ToggleButton sineButton;
 
 	@FXML
-	private RadioButton squareButton;
+	private ToggleButton squareButton;
 
 	@FXML
-	private RadioButton triangleButton;
+	private ToggleButton triangleButton;
 
 	@FXML
-	private RadioButton sawButton;
+	private ToggleButton sawButton;
 
-
-	public void setSynth(Synthesizer synth) {
-		this.synth = synth;
-	}
 
 	// Show the piano roll when the piano roll button is pressed
 	@FXML
@@ -130,31 +133,14 @@ public class Controller {
 		Object node = e.getSource();
 		Button instrument = (Button)node;
 
-		// Disconnect current waveform before connected new one
-		synth.disconnectInstrument();
-
 		// Get the ID associated with the button
 		selectedInstrumentID = Integer.parseInt(instrument.getUserData().toString());
 		synth.setSelectedInstrument(selectedInstrumentID);
 
-		// Connect waveform of current instrument
-		synth.connectInstrument();
-
-		// Get the waveform of the selected instrument and set the RadioButton of the waveform
-		int waveformId = synth.getSelectedInstrument().getWaveformId();
-		if(waveformId == 0) {
-			sineButton.setSelected(true);
-		} else if (waveformId == 1) {
-			squareButton.setSelected(true);
-		} else if (waveformId == 2) {
-			triangleButton.setSelected(true);
-		} else if (waveformId == 3) {
-			sawButton.setSelected(true);
-		}
-
 		// Get the envelope data of the selected instrument and set the values of the sliders to reflect the values
 		double[] envelopeData = synth.getSelectedInstrument().getEnvelopeData();
 		attackSlider.setValue(envelopeData[Instrument.ATTACK_VALUE]);
+		System.out.println("Attack: " + envelopeData[Instrument.ATTACK_VALUE]);
 		decaySlider.setValue(envelopeData[Instrument.DECAY_VALUE]);
 		sustainSlider.setValue(envelopeData[Instrument.SUSTAIN_VALUE]);
 		releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
@@ -165,14 +151,11 @@ public class Controller {
 	public void onWaveformClick(MouseEvent e) {
 		// Get the button object of the current instrument
 		Object node = e.getSource();
-		RadioButton waveform = (RadioButton)node;
+		Button waveform = (Button)node;
 
-		synth.disconnectInstrument();
 		// Retrieve the waveform ID and set the waveform of the instrument
 		int selectedWaveformID = Integer.parseInt(waveform.getUserData().toString());
 		synth.getSelectedInstrument().setWaveform(selectedWaveformID);
-
-		synth.connectInstrument();
 	}
 
 	// Update the envelope of the instrument when the user changes a slider value
@@ -195,5 +178,36 @@ public class Controller {
 		// Update the envelope data of the instrument
 		synth.getSelectedInstrument().updateEnvelope(envelopeData);
 	}
-
+	
+	/**
+	 * This function determines what to do based on the keys pressed while on the gridpane (piano adapter, ctrl functions, etc.)
+	 * 
+	 * @param event - the key event object containing information about the particular key event
+	 * @return nothing
+	 */
+	@FXML
+	public void onGridKeyPressed(KeyEvent event) {
+		
+		KeyCode keyCode = event.getCode();
+		
+		//Begin special function processing
+		if(event.isControlDown()) {
+			switch(keyCode) {
+			case Z:
+				System.out.println("Undo the last action.");
+				break;
+			case Y:
+				System.out.println("Redo the last action.");
+				break;
+			case S: 
+				if(event.isShiftDown())
+					System.out.println("Save the project to a certain file");
+				else
+					System.out.println("Save the project");
+				break;
+			default:
+				System.out.println("There is no special function for this character sequence.");
+			}
+		}
+	}
 }
