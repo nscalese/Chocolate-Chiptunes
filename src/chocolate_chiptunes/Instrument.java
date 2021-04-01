@@ -82,4 +82,8 @@ public class Instrument {
     public double[] getEnvelopeData() {
         return envelopeData;
     }
+
+    public SegmentedEnvelope getEnvelope() {
+        return envelope;
+    }
 }

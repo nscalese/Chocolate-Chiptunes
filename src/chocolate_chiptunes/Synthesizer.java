@@ -12,6 +12,7 @@ public class Synthesizer extends Circuit {
     public com.jsyn.Synthesizer synth;
     private LineOut out;
     private Instrument[] instruments = new Instrument[4];
+    private VariableRateDataReader envelopePlayer;
     private int selectedInstrumentID;
     private int instrumentCount = 1;
 
@@ -29,19 +30,23 @@ public class Synthesizer extends Circuit {
     public Synthesizer() {
         // Create the synth and line out
         synth = JSyn.createSynthesizer();
-        out = new LineOut();
-
-        // Start the synth and add the line out
-        synth.start();
-        synth.add(out);
 
         // Create a default instrument
         instruments[0] = new Instrument();
 
         // Add the instrument and connect it to the line out
         synth.add(instruments[0].getOscillator());
+
+        synth.add(envelopePlayer = new VariableRateMonoReader());
+
+        // Start the synth and add the line out
+        synth.add(out = new LineOut());
+
+        envelopePlayer.output.connect(instruments[0].getOscillator().amplitude);
+
         instruments[0].getOscillator().output.connect(0, out.input, 0);
         instruments[0].getOscillator().output.connect(0, out.input, 1);
+        synth.start();
     }
 
     /* Called when the new instrument button is pressed
@@ -74,14 +79,21 @@ public class Synthesizer extends Circuit {
 
     // Disconnect the currently selected waveform
     public void disconnectInstrument() {
-        synth.remove(instruments[selectedInstrumentID].getOscillator());
         instruments[selectedInstrumentID].getOscillator().output.disconnect(0, out.input, 0);
         instruments[selectedInstrumentID].getOscillator().output.disconnect(0, out.input, 1);
+
+        envelopePlayer.output.disconnect(instruments[selectedInstrumentID].getOscillator().amplitude);
+
+        synth.remove(instruments[selectedInstrumentID].getOscillator());
+
     }
 
     // Connect the currently selected waveform
     public void connectInstrument() {
         synth.add(instruments[selectedInstrumentID].getOscillator());
+
+        envelopePlayer.output.connect(instruments[selectedInstrumentID].getOscillator().amplitude);
+
         instruments[selectedInstrumentID].getOscillator().output.connect(0, out.input, 0);
         instruments[selectedInstrumentID].getOscillator().output.connect(0, out.input, 1);
     }
@@ -97,12 +109,13 @@ public class Synthesizer extends Circuit {
         synth.stop();
     }
 
-    public void setKeyFrequency(char keyChar) {
+    public void playNote(char keyChar) {
         instruments[selectedInstrumentID].getOscillator().frequency.set(KEY_FREQUENCIES.get(keyChar));
         out.start();
+        envelopePlayer.dataQueue.queueOn(instruments[selectedInstrumentID].getEnvelope());
     }
 
     public void stopOut() {
-        out.stop();
+        envelopePlayer.dataQueue.queueOff(instruments[selectedInstrumentID].getEnvelope());
     }
 }

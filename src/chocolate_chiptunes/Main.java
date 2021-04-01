@@ -30,7 +30,7 @@ public class Main extends Application {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent keyEvent) {
-				synth.setKeyFrequency(keyEvent.getCode().getChar().toLowerCase().charAt(0));
+				synth.playNote(keyEvent.getCode().getChar().toLowerCase().charAt(0));
 			}
 		});
 
