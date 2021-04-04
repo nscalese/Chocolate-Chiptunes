@@ -24,6 +24,18 @@
 	-fx-background-color: inherit;
 }
 
+.chord-button {
+	-fx-background-color: white;
+}
+
+.chord-button.selected {
+	-fx-background-color: blue;
+}
+
 #bpm {
 	-fx-margin: 10px 0 0 0;
+}
+
+#chords-grid * {
+	-fx-padding: 0 0 0 5px;
 }
