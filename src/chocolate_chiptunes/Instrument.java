@@ -22,6 +22,11 @@ public class Instrument {
     public static final int DECAY_VALUE = 2;
     public static final int SUSTAIN_VALUE = 4;
     public static final int RELEASE_VALUE = 6;
+    
+    public static final int SINE_WAVE = 0;
+    public static final int SQUARE_WAVE = 1;
+    public static final int TRIANGLE_WAVE = 2;
+    public static final int SAW_WAVE = 3;
 
 
     public Instrument() {
@@ -50,13 +55,13 @@ public class Instrument {
         this.waveformID = waveformID;
         System.out.println("Setting waveform of ID: " + waveformID);
 
-        if(waveformID == 0) {
+        if(waveformID == SINE_WAVE) {
             waveform = sine;
-        } else if (waveformID == 1) {
+        } else if (waveformID == SQUARE_WAVE) {
             waveform = square;
-        } else if (waveformID == 2) {
+        } else if (waveformID == TRIANGLE_WAVE) {
             waveform = triangle;
-        } else if (waveformID == 3) {
+        } else if (waveformID == SAW_WAVE) {
             waveform = saw;
         } else {
             System.out.println("Error in selecting waveform");
