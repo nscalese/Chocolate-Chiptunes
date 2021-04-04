@@ -30,14 +30,16 @@ public class Main extends Application {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent keyEvent) {
-				synth.playNote(keyEvent.getCode().getChar().toLowerCase().charAt(0));
+				if(!keyEvent.isControlDown())
+					synth.playNote(keyEvent.getCode().getChar().toLowerCase().charAt(0));
 			}
 		});
 
 		scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent keyEvent) {
-				synth.stopOut();
+				if(!keyEvent.isControlDown())
+					synth.stopOut();
 			}
 		});
 
