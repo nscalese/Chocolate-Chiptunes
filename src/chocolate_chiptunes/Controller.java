@@ -15,7 +15,7 @@ public class Controller {
 	
 	ActionLog actionLog = new ActionLog(this);
 
-	Synthesizer synth = new Synthesizer();
+	Synthesizer synth;
 
 	int selectedInstrumentID = 0;
 		

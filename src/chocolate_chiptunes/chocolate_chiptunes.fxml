@@ -553,545 +553,442 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="B">
+                                    <Label text="C" GridPane.rowIndex="0">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
-                                       <GridPane.margin>
-                                          <Insets />
-                                       </GridPane.margin>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="1">
+                                    <Label text="B" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="2">
+                                    <Label text="A#" GridPane.rowIndex="2">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="3">
+                                    <Label text="A" GridPane.rowIndex="3">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="4">
+                                    <Label text="G#" GridPane.rowIndex="4">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="5">
+                                    <Label text="G" GridPane.rowIndex="5">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="6">
+                                    <Label text="F#" GridPane.rowIndex="6">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="7">
+                                    <Label text="F" GridPane.rowIndex="7">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="8">
+                                    <Label text="E" GridPane.rowIndex="8">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="9">
+                                    <Label text="D#" GridPane.rowIndex="9">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="10">
+                                    <Label text="D" GridPane.rowIndex="10">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="11">
+                                    <Label text="C#" GridPane.rowIndex="11">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="12">
+                                    <Label text="C" GridPane.rowIndex="12">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="13">
+                                    <Label text="B" GridPane.rowIndex="13">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="14">
+                                    <Label text="A#" GridPane.rowIndex="14">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="15">
+                                    <Label text="A" GridPane.rowIndex="15">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="16">
+                                    <Label text="G#" GridPane.rowIndex="16">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="17">
+                                    <Label text="G" GridPane.rowIndex="17">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="18">
+                                    <Label text="F#" GridPane.rowIndex="18">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="19">
+                                    <Label text="F" GridPane.rowIndex="19">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="20">
+                                    <Label text="E" GridPane.rowIndex="20">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="21">
+                                    <Label text="D#" GridPane.rowIndex="21">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="22">
+                                    <Label text="D" GridPane.rowIndex="22">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="23">
+                                    <Label text="C#" GridPane.rowIndex="23">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="24">
+                                    <Label text="C" GridPane.rowIndex="24">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="25">
+                                    <Label text="B" GridPane.rowIndex="25">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="26">
+                                    <Label text="A#" GridPane.rowIndex="26">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="27">
+                                    <Label text="A" GridPane.rowIndex="27">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="28">
+                                    <Label text="G#" GridPane.rowIndex="28">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="29">
+                                    <Label text="G" GridPane.rowIndex="29">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="30">
+                                    <Label text="F#" GridPane.rowIndex="30">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="31">
+                                    <Label text="F" GridPane.rowIndex="31">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="32">
+                                    <Label text="E" GridPane.rowIndex="32">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="33">
+                                    <Label text="D#" GridPane.rowIndex="33">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="34">
+                                    <Label text="D" GridPane.rowIndex="34">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="35">
+                                    <Label text="C#" GridPane.rowIndex="35">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="36">
+                                    <Label text="C" GridPane.rowIndex="36">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="37">
+                                    <Label text="B" GridPane.rowIndex="37">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="38">
+                                    <Label text="A#" GridPane.rowIndex="38">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="39">
+                                    <Label text="A" GridPane.rowIndex="39">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="40">
+                                    <Label text="G#" GridPane.rowIndex="40">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="41">
+                                    <Label text="G" GridPane.rowIndex="41">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="42">
+                                    <Label text="F#" GridPane.rowIndex="42">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="43">
+                                    <Label text="F" GridPane.rowIndex="43">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="44">
+                                    <Label text="E" GridPane.rowIndex="44">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="45">
+                                    <Label text="D#" GridPane.rowIndex="45">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="46">
+                                    <Label text="D" GridPane.rowIndex="46">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="47">
+                                    <Label text="C#" GridPane.rowIndex="47">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="48">
+                                    <Label text="C" GridPane.rowIndex="48">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="49">
+                                    <Label text="B" GridPane.rowIndex="49">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="50">
+                                    <Label text="A#" GridPane.rowIndex="50">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="51">
+                                    <Label text="A" GridPane.rowIndex="51">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="52">
+                                    <Label text="G#" GridPane.rowIndex="52">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="53">
+                                    <Label text="G" GridPane.rowIndex="53">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="54">
+                                    <Label text="F#" GridPane.rowIndex="54">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="55">
+                                    <Label text="F" GridPane.rowIndex="55">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="56">
+                                    <Label text="E" GridPane.rowIndex="56">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="57">
+                                    <Label text="D#" GridPane.rowIndex="57">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="58">
+                                    <Label text="D" GridPane.rowIndex="58">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="59">
+                                    <Label text="C#" GridPane.rowIndex="59">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="60">
+                                    <Label text="C" GridPane.rowIndex="60">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="61">
+                                    <Label text="B" GridPane.rowIndex="61">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="62">
+                                    <Label text="A#" GridPane.rowIndex="62">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="63">
+                                    <Label text="A" GridPane.rowIndex="63">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="64">
+                                    <Label text="G#" GridPane.rowIndex="64">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="65">
+                                    <Label text="G" GridPane.rowIndex="65">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="66">
+                                    <Label text="F#" GridPane.rowIndex="66">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="67">
+                                    <Label text="F" GridPane.rowIndex="67">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="68">
+                                    <Label text="E" GridPane.rowIndex="68">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="69">
+                                    <Label text="D#" GridPane.rowIndex="69">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="70">
+                                    <Label text="D" GridPane.rowIndex="70">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="71">
+                                    <Label text="C#" GridPane.rowIndex="71">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="72">
+                                    <Label text="C" GridPane.rowIndex="72">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="73">
+                                    <Label text="B" GridPane.rowIndex="73">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="74">
+                                    <Label text="A#" GridPane.rowIndex="74">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="75">
+                                    <Label text="A" GridPane.rowIndex="75">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G" GridPane.rowIndex="76">
+                                    <Label text="G#" GridPane.rowIndex="76">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F#" GridPane.rowIndex="77">
+                                    <Label text="G" GridPane.rowIndex="77">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="F" GridPane.rowIndex="78">
+                                    <Label text="F#" GridPane.rowIndex="78">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="E" GridPane.rowIndex="79">
+                                    <Label text="F" GridPane.rowIndex="79">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D#" GridPane.rowIndex="80">
+                                    <Label text="E" GridPane.rowIndex="80">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="D" GridPane.rowIndex="81">
+                                    <Label text="D#" GridPane.rowIndex="81">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C#" GridPane.rowIndex="82">
+                                    <Label text="D" GridPane.rowIndex="82">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="C" GridPane.rowIndex="83">
+                                    <Label text="C#" GridPane.rowIndex="83">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="B" GridPane.rowIndex="84">
+                                    <Label text="C" GridPane.rowIndex="84">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A#" GridPane.rowIndex="85">
+                                    <Label text="B" GridPane.rowIndex="85">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="A" GridPane.rowIndex="86">
+                                    <Label text="A#" GridPane.rowIndex="86">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="G#" GridPane.rowIndex="87">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="G" GridPane.rowIndex="88">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="F#" GridPane.rowIndex="89">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="F" GridPane.rowIndex="90">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="E" GridPane.rowIndex="91">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="D#" GridPane.rowIndex="92">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="D" GridPane.rowIndex="93">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="C#" GridPane.rowIndex="94">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="C" GridPane.rowIndex="95">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="B" GridPane.rowIndex="96">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="A#" GridPane.rowIndex="97">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="A" GridPane.rowIndex="98">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="G#" GridPane.rowIndex="99">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="G" GridPane.rowIndex="100">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="F#" GridPane.rowIndex="101">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="F" GridPane.rowIndex="102">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="E" GridPane.rowIndex="103">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="D#" GridPane.rowIndex="104">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="D" GridPane.rowIndex="105">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="C#" GridPane.rowIndex="106">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="C" GridPane.rowIndex="107">
+                                    <Label text="A" GridPane.rowIndex="87">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
@@ -1208,44 +1105,8 @@
                             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" onMouseEntered="#onChordButtonDragged" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="0" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="0" />
 								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -2654,311 +2515,7 @@
 								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="88" />
 								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="88" />
 								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="88" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="89" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="90" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="91" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="92" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="93" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="94" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="95" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="96" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="97" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="98" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="99" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="100" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="101" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="102" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="103" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="104" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="105" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="106" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="0" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="1" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="2" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="3" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="4" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="5" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="6" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="7" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="8" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="9" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="10" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="11" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="12" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="13" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="14" GridPane.rowIndex="107" />
-								<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onChordButtonClicked" styleClass="chord-button" GridPane.columnIndex="15" GridPane.rowIndex="107" />
-							</children>
+                           </children>
                         </GridPane>
                      </children>
                   </HBox>
