@@ -15,6 +15,7 @@ public class Synthesizer extends Circuit {
     private VariableRateDataReader envelopePlayer;
     private int selectedInstrumentID;
     private int instrumentCount = 1;
+    private int bpm = 120;
 
     public static final HashMap<Character, Double> KEY_FREQUENCIES = new HashMap<Character, Double>();
 
@@ -108,7 +109,21 @@ public class Synthesizer extends Circuit {
     public void stopSynth() {
         synth.stop();
     }
-
+    
+    // Get the current time
+    public double getCurrentTime() {
+    	return synth.getCurrentTime();
+    }
+    
+    // Get the current BPM
+    public int getBPM(){
+    	return bpm;
+    }
+    
+    // Set the new BPM
+    public void setBPM(int bpm) {
+    	this.bpm = bpm;
+    }
 
     public void playNote(char keyChar) {
         try {
@@ -119,8 +134,37 @@ public class Synthesizer extends Circuit {
 
         }
     }
+    
+    public void playNote(double frequency, double time) {
+		//Set the amplitude to 0 if the frequency is -1, otherwise set it to 1
+    	instruments[selectedInstrumentID].getOscillator().amplitude.set(frequency == -1 ? 0 : time);
+		
+		//Set the frequency to o if the frequency is -1, otherwise set it to the frequency
+        instruments[selectedInstrumentID].getOscillator().frequency.set(frequency == -1 ? 0 : frequency, time);	
+
+        envelopePlayer.dataQueue.queue(instruments[selectedInstrumentID].getEnvelope());        
+    }
+    
+    public void clearPlayer() {
+    	envelopePlayer.dataQueue.clear();
+    }
+    
+    public LineOut getLineOut() {
+    	return out;
+    }
 
     public void stopOut() {
         envelopePlayer.dataQueue.queueOff(instruments[selectedInstrumentID].getEnvelope());
     }
+
+	//Let the synth sleep
+    public void sleepUntil(double sleepTime) {
+		try
+        {
+            synth.sleepUntil(sleepTime);
+        } catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }	
+	}
 }
