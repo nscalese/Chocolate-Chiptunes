@@ -6,6 +6,7 @@ import com.jsyn.unitgen.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class Synthesizer extends Circuit {
 
@@ -135,20 +136,6 @@ public class Synthesizer extends Circuit {
         }
     }
     
-    public void playNote(double frequency, double time) {
-		//Set the amplitude to 0 if the frequency is -1, otherwise set it to 1
-    	instruments[selectedInstrumentID].getOscillator().amplitude.set(frequency == -1 ? 0 : time);
-		
-		//Set the frequency to o if the frequency is -1, otherwise set it to the frequency
-        instruments[selectedInstrumentID].getOscillator().frequency.set(frequency == -1 ? 0 : frequency, time);	
-
-        envelopePlayer.dataQueue.queue(instruments[selectedInstrumentID].getEnvelope());        
-    }
-    
-    public void clearPlayer() {
-    	envelopePlayer.dataQueue.clear();
-    }
-    
     public LineOut getLineOut() {
     	return out;
     }
@@ -157,14 +144,35 @@ public class Synthesizer extends Circuit {
         envelopePlayer.dataQueue.queueOff(instruments[selectedInstrumentID].getEnvelope());
     }
 
-	//Let the synth sleep
-    public void sleepUntil(double sleepTime) {
-		try
-        {
-            synth.sleepUntil(sleepTime);
-        } catch(InterruptedException e)
-        {
-            e.printStackTrace();
-        }	
-	}
+    public void playSong(double[] noteFrequencies) {
+        double freq;
+        long time = (long) ((60.0 / bpm) * 1000); // Time in milliseconds
+
+        // If the note is not empty, set the frequency to the frequency in the array
+        // Else, set the frequency to 0.0 (no volume)
+        for(int i = 0; i < noteFrequencies.length; i++) {
+            if(noteFrequencies[i] != -1.0) {
+                freq = noteFrequencies[i];
+                instruments[selectedInstrumentID].getOscillator().frequency.set(freq);
+            } else {
+                instruments[selectedInstrumentID].getOscillator().frequency.set(0.0);
+            }
+
+            // Then, start the output and queue the note
+            out.start();
+            envelopePlayer.dataQueue.queueOn(instruments[selectedInstrumentID].getEnvelope());
+
+            // Wait until the note is done playing
+            try {
+                System.out.println("Waiting...");
+                TimeUnit.MILLISECONDS.sleep(time);
+                System.out.println("Done waiting");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // Then turn the queue off and loop until all notes are played
+            stopOut();
+        }
+    }
 }

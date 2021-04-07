@@ -426,45 +426,10 @@ public class Controller {
 					System.out.println("Save the project");
 				break;
 			case P:
-				playSong();
+				synth.playSong(noteFrequencies);
 			default:
 				System.out.println("There is no special function for this character sequence.");
 			}
 		}
 	}
-	
-	public void playSong() {
-		
-		synth.clearPlayer();
-		
-		//Get the current time
-		double timeEnd, timeStart = timeEnd = synth.getCurrentTime();
-		
-		//Convert the beats per minute to beats per second
-		double bps = 60.0 / synth.getBPM();
-		
-		//Loop through the length of the note frequencies array and play each sound (if it exists)
-		for(double frequency : noteFrequencies) {
-			//Add the beats per second to the total time
-			timeEnd += bps;
-			
-			synth.playNote(frequency, timeEnd);
-		}
-		
-		System.out.println((timeEnd - timeStart) * 1000);
-		
-		//Stop and start the audio output
-		synth.getLineOut().start();
-		
-		new Timer().schedule( 
-		        new TimerTask() {
-		            @Override
-		            public void run() {
-		        		synth.getLineOut().stop();
-		            }
-		        }, 
-		        (long)((timeEnd - timeStart) * 1000) 
-		);
-		
-	}	
 }
