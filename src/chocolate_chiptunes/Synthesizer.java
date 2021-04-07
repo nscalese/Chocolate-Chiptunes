@@ -109,10 +109,15 @@ public class Synthesizer extends Circuit {
         synth.stop();
     }
 
+
     public void playNote(char keyChar) {
-        instruments[selectedInstrumentID].getOscillator().frequency.set(KEY_FREQUENCIES.get(keyChar));
-        out.start();
-        envelopePlayer.dataQueue.queueOn(instruments[selectedInstrumentID].getEnvelope());
+        try {
+            instruments[selectedInstrumentID].getOscillator().frequency.set(KEY_FREQUENCIES.get(keyChar));
+            out.start();
+            envelopePlayer.dataQueue.queueOn(instruments[selectedInstrumentID].getEnvelope());
+        } catch (NullPointerException e) {
+
+        }
     }
 
     public void stopOut() {

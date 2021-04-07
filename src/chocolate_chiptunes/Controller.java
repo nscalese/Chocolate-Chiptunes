@@ -11,6 +11,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
+import java.util.HashMap;
+
 public class Controller {
 	
 	ActionLog actionLog = new ActionLog(this);
@@ -18,7 +20,10 @@ public class Controller {
 	Synthesizer synth;
 
 	int selectedInstrumentID = 0;
-		
+
+	private double[] noteFrequencies = new double[]{-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0};
+	private Button[] selectedNotes = new Button[] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
+
 	@FXML
 	private GridPane mainGrid;
 	
@@ -338,14 +343,39 @@ public class Controller {
 	
 	@FXML
 	public void onChordButtonClicked(MouseEvent e) {
-		Button chord = (Button)e.getSource();
+		Button note = (Button)e.getSource();
 		
-		ObservableList<String> classes = chord.getStyleClass(); 
-		
-		if(classes.contains("selected"))
+		ObservableList<String> classes = note.getStyleClass();
+
+		int noteColumn = GridPane.getColumnIndex(note);
+		int noteRow = GridPane.getRowIndex(note);
+
+		/* If the note was selected before...
+		 *  1. Un-highlight it
+		 *  2. Reset arrays to null values
+		 */
+		if(classes.contains("selected")) {
 			classes.remove("selected");
-		else
-			classes.add("selected");		
+			selectedNotes[noteColumn] = null;
+			noteFrequencies[noteColumn] = -1.0;
+
+		//Otherwise, check if there is already a selected note in the same column
+		} else {
+			// If there is, un-highlight the other note and replace the values in the arrays
+			if(selectedNotes[noteColumn] != null) {
+				selectedNotes[noteColumn].getStyleClass().remove("selected");
+
+				classes.add("selected");
+				selectedNotes[noteColumn] = note;
+				noteFrequencies[noteColumn] = Utils.Math.getKeyFrequency(88 - noteRow);
+
+			// Otherwise, simply highlight the note and add it to the arrays
+			} else {
+				classes.add("selected");
+				selectedNotes[noteColumn] = note;
+				noteFrequencies[noteColumn] = Utils.Math.getKeyFrequency(88 - noteRow);
+			}
+		}
 	}
 	
 	@FXML
