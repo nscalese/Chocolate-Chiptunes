@@ -2,25 +2,19 @@ package chocolate_chiptunes;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import com.jsyn.unitgen.UnitOscillator;
+import javafx.stage.Stage;
 
 public class Controller {
-	
+
 	ActionLog actionLog = new ActionLog(this);
 
 	Synthesizer synth;
@@ -32,16 +26,22 @@ public class Controller {
 
 	@FXML
 	private GridPane mainGrid;
-	
+
 	@FXML
 	private GridPane chordsGrid;
-	
+
 	@FXML
 	private ScrollPane pianoRoll;
-		
+
 	@FXML
 	private ScrollPane arrangementEditor;
-	
+
+	@FXML
+	private Button btnSignin;
+
+	@FXML
+	private Button btnSignup;
+
 	@FXML
 	private Label bpmLabel;
 
@@ -77,9 +77,12 @@ public class Controller {
 
 	@FXML
 	private ToggleButton sawButton;
-	
+
 	@FXML
 	private ToggleGroup waveformGroup;
+
+	@FXML
+	private static Slider volumeSlider;
 
 
 	public void setSynth(Synthesizer synth) {
@@ -99,12 +102,11 @@ public class Controller {
 		pianoRoll.setVisible(false);
 		arrangementEditor.setVisible(true);
 	}
-	
+
 	public void onBPMButtonClick(MouseEvent e) {
 		int bpmValue = Integer.parseInt(bpmLabel.getText());
-		
+
 		String buttonID = ((Button)e.getSource()).getId();
-		
 		try {
 			//Add the action
 			actionLog.AddAction(
@@ -112,18 +114,17 @@ public class Controller {
 					String.valueOf(buttonID.equals("incrementBPMButton") ? ++bpmValue : --bpmValue),
 					bpmLabel,
 					bpmLabel.getClass().getMethod("setText", String.class),
-					this.getClass().getMethod("changeBPM", int.class));
+					this.getClass().getMethod("changeBPM", String.class));
 		} catch (NoSuchMethodException | SecurityException e1) {
-			System.out.println("An unexpected error has occured.");
+			System.out.println("An unexpected error has occured. - BPM");
 			e1.printStackTrace();
-		}	
-		
-		changeBPM(String.valueOf(bpmValue)); 
+		}
+		changeBPM(String.valueOf(bpmValue));
 	}
-	
+
 	public void changeBPM(String bpmValue) {
 		synth.setBPM(Integer.parseInt(bpmValue));
-		
+
 		bpmLabel.setText(bpmValue);
 	}
 
@@ -132,7 +133,7 @@ public class Controller {
 	public void onAddInstrumentClick(MouseEvent e) {
 		addInstrument();
 	}
-	
+
 	public void addInstrument() {
 		// Get the current instrument count
 		int instrumentCount = synth.getInstrumentCount();
@@ -163,6 +164,24 @@ public class Controller {
 		} else {
 			System.out.println("Max instruments");
 		}
+	}
+	public void onSignInClick(MouseEvent e) {
+		signin();
+	}
+
+	public void signin() {
+		Stage window = new Stage();
+		//Scene scene = new Scene(primarygridpane,400,500);
+		SigninForm signin = new SigninForm();
+		signin.start(window);
+
+	}
+
+	public void onSignupClick(MouseEvent e){signup();}
+
+	public void signup(){
+		boolean result = SignUpForm.display("Chocolate Chiptunes", "Sign-Up Form");
+		System.out.println(result);
 	}
 	/*
 	public void removeInstrument(Button buttonToRemove) {
@@ -236,12 +255,12 @@ public class Controller {
 	public void onWaveformClick(MouseEvent e) {
 		// Get the button object of the current instrument
 		ToggleButton waveform = (ToggleButton)e.getSource();
-		
+
 		//Instantiate an empty toggle button
 		ToggleButton oldWaveform = null;
 
 		//Switch conditional for the current instruments waveform
-		//Sets the oldWaveform toggle button based on the waveformID 
+		//Sets the oldWaveform toggle button based on the waveformID
 		switch(synth.getSelectedInstrument().getWaveformId()) {
 		case Instrument.SINE_WAVE:
 			oldWaveform = sineButton;
@@ -256,7 +275,7 @@ public class Controller {
 			oldWaveform = sawButton;
 			break;
 		}
-					
+
 		//Conditional to prevent action from being added for certain cases
 		if(oldWaveform != null && !oldWaveform.equals(waveform)) {
 			try {
@@ -270,13 +289,13 @@ public class Controller {
 			} catch (NoSuchMethodException | SecurityException e1) {
 				System.out.println("An unexpected error has occured.");
 				e1.printStackTrace();
-			}	
+			}
 		}
-		
+
 		//Change the wave form
 		changeWaveform(waveform);
 	}
-	
+
 	public void changeWaveform(Toggle waveform) {
 		synth.disconnectInstrument();
 		// Retrieve the waveform ID and set the waveform of the instrument
@@ -286,36 +305,48 @@ public class Controller {
 		synth.connectInstrument();
 	}
 
+	/**
+	public static double getVolumeValue(){
+		int sliderValue = (int) volumeSlider.getValue();
+		System.out.println(sliderValue);
+		return sliderValue;
+	}
+    */
+
 	// Update the envelope of the instrument when the user changes a slider value
 	@FXML
 	public void onSliderChanged(MouseEvent e) {
 		//Grab the affected slider
 		Slider sliderChanged = (Slider) e.getSource();
-		
-		//The envelope's array index corresponding to the slider type		
+
+		//The envelope's array index corresponding to the slider type
 		int sliderIndex = -1;
 
 		//Switch conditional for the slider's fxID
 		//Sets the slider index value
 		switch(sliderChanged.getId()) {
-		case "attackSlider":
-			sliderIndex = Instrument.ATTACK_VALUE;
-			break;
-		case "decaySlider":
-			sliderIndex = Instrument.DECAY_VALUE;
-			break;
-		case "sustainSlider":
-			sliderIndex = Instrument.SUSTAIN_VALUE;
-			break;
-		case "releaseSlider":
-			sliderIndex = Instrument.RELEASE_VALUE;
-			break;
+			case "attackSlider":
+				sliderIndex = Instrument.ATTACK_VALUE;
+				break;
+			case "decaySlider":
+				sliderIndex = Instrument.DECAY_VALUE;
+				break;
+			case "sustainSlider":
+				sliderIndex = Instrument.SUSTAIN_VALUE;
+				break;
+			case "releaseSlider":
+				sliderIndex = Instrument.RELEASE_VALUE;
+				break;
+			case "volumeSlider":
+				//System.out.println("\n\n\n\n Changine Volume to" + sliderChanged.getValue() + "\n\n\n\n");
+				synth.changeVolume(sliderChanged.getValue());
+				return;
 		}
-		
+
 		//Grab old/new slider values
 		double oldValue = synth.getSelectedInstrument().getEnvelopeData()[sliderIndex],
 				newValue = sliderChanged.getValue();
-		
+
 		//Add the action if the values differ
 		if(oldValue != newValue) {
 			try {
@@ -329,10 +360,10 @@ public class Controller {
 			} catch (NoSuchMethodException | SecurityException e1) {
 				System.out.println("An unexpected error has occured.");
 				e1.printStackTrace();
-			}	
-		}			
+			}
+		}
 	}
-	
+
 	public void updateEnvelope(double value) {
 	// Get the values of the individual sliders
 		double attackValue = (double) attackSlider.getValue();
@@ -351,11 +382,11 @@ public class Controller {
 		// Update the envelope data of the instrument
 		synth.getSelectedInstrument().updateEnvelope(envelopeData);
 	}
-	
+
 	@FXML
 	public void onChordButtonClicked(MouseEvent e) {
 		Button note = (Button)e.getSource();
-		
+
 		ObservableList<String> classes = note.getStyleClass();
 
 		int noteColumn = GridPane.getColumnIndex(note);
@@ -388,33 +419,33 @@ public class Controller {
 			}
 		}
 	}
-	
+
 	@FXML
 	public void onChordButtonDragged(MouseEvent e) {
 		System.out.println("HERE");
 		if(e.isControlDown()) {
 			Button chord = (Button)e.getSource();
-			
-			ObservableList<String> classes = chord.getStyleClass(); 
-			
+
+			ObservableList<String> classes = chord.getStyleClass();
+
 			if(classes.contains("selected"))
 				classes.remove("selected");
 			else
-				classes.add("selected");	
-		}		
+				classes.add("selected");
+		}
 	}
 
 	/**
 	 * This function determines what to do based on the keys pressed while on the gridpane (piano adapter, ctrl functions, etc.)
-	 * 
+	 *
 	 * @param event - the key event object containing information about the particular key event
 	 * @return nothing
 	 */
 	@FXML
 	public void onGridKeyPressed(KeyEvent event) {
-		
+
 		KeyCode keyCode = event.getCode();
-		
+
 		//Begin special function processing
 		if(event.isControlDown()) {
 			switch(keyCode) {
@@ -424,7 +455,7 @@ public class Controller {
 			case Y:
 				actionLog.Redo();
 				break;
-			case S: 
+			case S:
 				if(event.isShiftDown())
 					System.out.println("Save the project to a certain file");
 				else
