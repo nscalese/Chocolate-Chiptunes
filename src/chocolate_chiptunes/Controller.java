@@ -338,7 +338,7 @@ public class Controller {
 				sliderIndex = Instrument.RELEASE_VALUE;
 				break;
 			case "volumeSlider":
-				//System.out.println("\n\n\n\n Changine Volume to" + sliderChanged.getValue() + "\n\n\n\n");
+				//System.out.println("\n\n\n\n Changing Volume to" + sliderChanged.getValue() + "\n\n\n\n");
 				synth.changeVolume(sliderChanged.getValue());
 				return;
 		}
@@ -361,6 +361,8 @@ public class Controller {
 				System.out.println("An unexpected error has occured.");
 				e1.printStackTrace();
 			}
+
+			updateEnvelope(0);
 		}
 	}
 
@@ -370,6 +372,7 @@ public class Controller {
 		double decayValue = (double) decaySlider.getValue();
 		double sustainValue = (double) sustainSlider.getValue();
 		double releaseValue = (double) releaseSlider.getValue();
+		System.out.println("Attack value: " + attackValue);
 
 		// Place the values in a double array
 		double[] envelopeData = {
