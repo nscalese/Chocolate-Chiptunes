@@ -2,20 +2,13 @@ package chocolate_chiptunes;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import com.jsyn.unitgen.UnitOscillator;
+import javafx.stage.Stage;
 
 public class Controller {
 	
@@ -39,6 +32,12 @@ public class Controller {
 		
 	@FXML
 	private ScrollPane arrangementEditor;
+
+	@FXML
+	private Button btnSignin;
+
+	@FXML
+	private Button btnSignup;
 	
 	@FXML
 	private Label bpmLabel;
@@ -79,6 +78,9 @@ public class Controller {
 	@FXML
 	private ToggleGroup waveformGroup;
 
+	@FXML
+	private static Slider volumeSlider;
+
 
 	public void setSynth(Synthesizer synth) {
 		this.synth = synth;
@@ -97,12 +99,11 @@ public class Controller {
 		pianoRoll.setVisible(false);
 		arrangementEditor.setVisible(true);
 	}
-	
+
 	public void onBPMButtonClick(MouseEvent e) {
 		int bpmValue = Integer.parseInt(bpmLabel.getText());
 		
 		String buttonID = ((Button)e.getSource()).getId();
-		
 		try {
 			//Add the action
 			actionLog.AddAction(
@@ -110,15 +111,14 @@ public class Controller {
 					String.valueOf(buttonID.equals("incrementBPMButton") ? ++bpmValue : --bpmValue),
 					bpmLabel,
 					bpmLabel.getClass().getMethod("setText", String.class),
-					this.getClass().getMethod("changeBPM", int.class));
+					this.getClass().getMethod("changeBPM", String.class));
 		} catch (NoSuchMethodException | SecurityException e1) {
-			System.out.println("An unexpected error has occured.");
+			System.out.println("An unexpected error has occured. - BPM");
 			e1.printStackTrace();
-		}	
-		
-		changeBPM(String.valueOf(bpmValue)); 
+		}
+		changeBPM(String.valueOf(bpmValue));
 	}
-	
+
 	public void changeBPM(String bpmValue) {
 		synth.setBPM(Integer.parseInt(bpmValue));
 		
@@ -158,6 +158,24 @@ public class Controller {
 		} else {
 			System.out.println("Max instruments");
 		}
+	}
+	public void onSignInClick(MouseEvent e) {
+		signin();
+	}
+
+	public void signin() {
+		Stage window = new Stage();
+		//Scene scene = new Scene(primarygridpane,400,500);
+		SigninForm signin = new SigninForm();
+		signin.start(window);
+
+	}
+
+	public void onSignupClick(MouseEvent e){signup();}
+
+	public void signup(){
+		boolean result = SignUpForm.display("Chocolate Chiptunes", "Sign-Up Form");
+		System.out.println(result);
 	}
 	/*
 	public void removeInstrument(Button buttonToRemove) {
@@ -281,6 +299,14 @@ public class Controller {
 		synth.connectInstrument();
 	}
 
+	/**
+	public static double getVolumeValue(){
+		int sliderValue = (int) volumeSlider.getValue();
+		System.out.println(sliderValue);
+		return sliderValue;
+	}
+    */
+
 	// Update the envelope of the instrument when the user changes a slider value
 	@FXML
 	public void onSliderChanged(MouseEvent e) {
@@ -293,18 +319,22 @@ public class Controller {
 		//Switch conditional for the slider's fxID
 		//Sets the slider index value
 		switch(sliderChanged.getId()) {
-		case "attackSlider":
-			sliderIndex = Instrument.ATTACK_VALUE;
-			break;
-		case "decaySlider":
-			sliderIndex = Instrument.DECAY_VALUE;
-			break;
-		case "sustainSlider":
-			sliderIndex = Instrument.SUSTAIN_VALUE;
-			break;
-		case "releaseSlider":
-			sliderIndex = Instrument.RELEASE_VALUE;
-			break;
+			case "attackSlider":
+				sliderIndex = Instrument.ATTACK_VALUE;
+				break;
+			case "decaySlider":
+				sliderIndex = Instrument.DECAY_VALUE;
+				break;
+			case "sustainSlider":
+				sliderIndex = Instrument.SUSTAIN_VALUE;
+				break;
+			case "releaseSlider":
+				sliderIndex = Instrument.RELEASE_VALUE;
+				break;
+			case "volumeSlider":
+				//System.out.println("\n\n\n\n Changine Volume to" + sliderChanged.getValue() + "\n\n\n\n");
+				synth.changeVolume(sliderChanged.getValue());
+				return;
 		}
 		
 		//Grab old/new slider values

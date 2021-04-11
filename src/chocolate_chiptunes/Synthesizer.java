@@ -1,12 +1,10 @@
 package chocolate_chiptunes;
-import com.jsyn.*;
-import com.jsyn.swing.*;
+import com.jsyn.JSyn;
 import com.jsyn.unitgen.*;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.DoubleStream;
 
 public class Synthesizer extends Circuit {
 
@@ -15,6 +13,7 @@ public class Synthesizer extends Circuit {
     private Instrument[] instruments = new Instrument[4];
     private VariableRateDataReader envelopePlayer;
     private int selectedInstrumentID;
+    private LinearRamp lag;
     private int instrumentCount = 1;
     private int bpm = 120;
 
@@ -40,6 +39,10 @@ public class Synthesizer extends Circuit {
         synth.add(instruments[0].getOscillator());
 
         synth.add(envelopePlayer = new VariableRateMonoReader());
+
+        synth.add( lag = new LinearRamp() );
+        lag.input.setup( 0.0, 0.5, 1.0 );
+        lag.time.set(  0.2 );
 
         // Start the synth and add the line out
         synth.add(out = new LineOut());
@@ -107,8 +110,9 @@ public class Synthesizer extends Circuit {
     }
 
     // Stop the synth
-    public void stopSynth() {
-        synth.stop();
+    public void changeVolume(double volume) {
+        //System.out.println(envelopePlayer.amplitude.get() + " AMPLITUDE BEFORE" + " " + volume);
+        envelopePlayer.amplitude.set(volume);
     }
     
     // Get the current time
@@ -135,28 +139,31 @@ public class Synthesizer extends Circuit {
 
         }
     }
-    
-    public LineOut getLineOut() {
-    	return out;
-    }
-
     public void stopOut() {
         envelopePlayer.dataQueue.queueOff(instruments[selectedInstrumentID].getEnvelope());
     }
 
     public void playSong(double[] noteFrequencies) {
+        //System.out.println("\n" + bpm + "\n");
         double freq;
         long time = (long) ((60.0 / bpm) * 1000); // Time in milliseconds
-
+        double sum = DoubleStream.of(noteFrequencies).sum();
         // If the note is not empty, set the frequency to the frequency in the array
         // Else, set the frequency to 0.0 (no volume)
         for(int i = 0; i < noteFrequencies.length; i++) {
+            if(sum < 0){
+                stopOut();
+                return;
+            }
             if(noteFrequencies[i] != -1.0) {
                 freq = noteFrequencies[i];
+                sum -= freq;
                 instruments[selectedInstrumentID].getOscillator().frequency.set(freq);
             } else {
+                sum -= -1.0;
                 instruments[selectedInstrumentID].getOscillator().frequency.set(0.0);
             }
+            //System.out.println(sum);
 
             // Then, start the output and queue the note
             out.start();
