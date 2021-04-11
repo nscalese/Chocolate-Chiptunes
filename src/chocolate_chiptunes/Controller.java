@@ -11,18 +11,41 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Modifier;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
+
 public class Controller {
+	private Stage stage;
+	
+	private File projectFile;
+	
+	private ActionLog actionLog;
 
-	ActionLog actionLog = new ActionLog(this);
+	private Synthesizer synth;
 
-	Synthesizer synth;
+	private int selectedInstrumentID;
+	
+	private Gson gson;
+	
+	private FileChooser fileChooser;
 
-	int selectedInstrumentID = 0;
-
-	private double[] noteFrequencies = new double[]{-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0};
-	private Button[] selectedNotes = new Button[] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
+	private double[] noteFrequencies;
+	private Button[] selectedNotes;
 
 	@FXML
 	private GridPane mainGrid;
@@ -83,7 +106,39 @@ public class Controller {
 
 	@FXML
 	private static Slider volumeSlider;
-
+	
+	public Controller() {
+		//Set the file to null as default
+		projectFile = null;
+		
+		//Set the action log
+		actionLog = new ActionLog(this);
+		
+		//Set the selected instrument ID
+		selectedInstrumentID = 0;
+		
+		//Set the gson reader/writer
+		gson = new GsonBuilder()
+				.setPrettyPrinting()
+				.create();
+		
+		//Set the File Chooser
+		fileChooser = new FileChooser();
+		
+		fileChooser.setTitle("Save Project");
+		
+		fileChooser.getExtensionFilters().add(new ExtensionFilter("JSON", "*.json"));
+				
+		//Set note frequencies
+		noteFrequencies = new double[]{-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0};
+		
+		//Set selected notes
+		selectedNotes = new Button[] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
+	}
+	
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
 
 	public void setSynth(Synthesizer synth) {
 		this.synth = synth;
@@ -305,14 +360,6 @@ public class Controller {
 		synth.connectInstrument();
 	}
 
-	/**
-	public static double getVolumeValue(){
-		int sliderValue = (int) volumeSlider.getValue();
-		System.out.println(sliderValue);
-		return sliderValue;
-	}
-    */
-
 	// Update the envelope of the instrument when the user changes a slider value
 	@FXML
 	public void onSliderChanged(MouseEvent e) {
@@ -457,15 +504,57 @@ public class Controller {
 				break;
 			case S:
 				if(event.isShiftDown())
-					System.out.println("Save the project to a certain file");
+					saveFile(true);
 				else
-					System.out.println("Save the project");
+					saveFile(false);
 				break;
 			case P:
 				synth.playSong(noteFrequencies);
+				break;
+			case O:
+				loadFile();
+				break;
 			default:
 				System.out.println("There is no special function for this character sequence.");
 			}
 		}
+	}
+	
+	@FXML
+	public void saveFile(boolean newFile) {
+		if(projectFile == null || !newFile)
+			projectFile = fileChooser.showSaveDialog(stage);
+
+		if(projectFile != null){
+			//Convert the synth object to JSON format
+			String projectJson = gson.toJson(new Project(synth.getInstruments(), synth.getBPM(), synth.getVolume(), noteFrequencies), Project.class);
+
+			try {
+				Files.writeString(Path.of(projectFile.getAbsolutePath()), projectJson, StandardOpenOption.WRITE);
+			} catch (IOException ex) {
+				//Error here
+			}
+		}
+	}
+	
+	@FXML
+	public void loadFile() {
+		File file = fileChooser.showOpenDialog(stage);
+		
+		if(file != null && file.getName().endsWith(".json")) {
+			try {
+				String projectJson = Files.readString(Path.of(file.getAbsolutePath()));
+				Project project = gson.fromJson(projectJson, Project.class);
+
+				if(project != null){
+					System.out.println(project.getBpm());
+				}
+
+				projectFile = file;
+			} catch (IOException ex) {
+				//Error here
+			}
+		}
+		
 	}
 }

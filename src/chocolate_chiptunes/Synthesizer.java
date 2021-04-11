@@ -81,6 +81,10 @@ public class Synthesizer extends Circuit {
     public int getInstrumentCount() {
         return instrumentCount;
     }
+    
+    public Instrument[] getInstruments() {
+    	return instruments;
+    }
 
     // Disconnect the currently selected waveform
     public void disconnectInstrument() {
@@ -109,10 +113,15 @@ public class Synthesizer extends Circuit {
         out.start();
     }
 
-    // Stop the synth
+    // Change the total volume
     public void changeVolume(double volume) {
         //System.out.println(envelopePlayer.amplitude.get() + " AMPLITUDE BEFORE" + " " + volume);
         envelopePlayer.amplitude.set(volume);
+    }
+
+    // Get the total volume
+    public double getVolume() {
+        return envelopePlayer.amplitude.get();
     }
     
     // Get the current time
