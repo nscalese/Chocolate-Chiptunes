@@ -6,6 +6,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
@@ -150,6 +152,9 @@ public class Controller {
 			});
 			newInstrument.setMaxHeight(btnAddInstrument.getMaxHeight());
 			newInstrument.setMaxWidth(btnAddInstrument.getMaxWidth());
+			newInstrument.getStyleClass().add("instrument-button");
+
+			InnerShadow shadow = new InnerShadow();
 
 			// Make sure the instrument is added to the list correctly
 			instrumentList.getChildren().remove(btnAddInstrument);

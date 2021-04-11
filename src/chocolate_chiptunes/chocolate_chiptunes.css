@@ -6,16 +6,25 @@
 
 #arrangement-button {
 	-fx-border-width:  0 0 0 1px;
+	-fx-background-color: #734b35;
+	-fx-text-fill: white;
 }
 
 #piano-button {
 	-fx-border-width:  0 1px 0 0;
+	-fx-background-color: #734b35;
+	-fx-text-fill: white;
 }
 
 .gray-border {
 	-fx-border-color: gray;
 	-fx-border-width: 1px;
 	-fx-border-radius: 0;
+	-fx-background-color: #734b35;
+}
+
+.pattern-list {
+	-fx-background-color: #A76D4C;
 }
 
 .bpm-button {
@@ -24,12 +33,68 @@
 	-fx-background-color: inherit;
 }
 
+.instrument-button {
+    -fx-background-color: #A74C59;
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 5px;
+}
+.instrument-button:hover {
+    -fx-background-color: #8a3e49;
+}
+
+.sample-button {
+    -fx-background-color: #A74C59;
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 5px;
+}
+.sample-button:hover {
+    -fx-background-color: #8a3e49;
+}
+
+.pattern-button {
+    -fx-background-color: #A74C59;
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 5px;
+}
+.pattern-button:hover {
+    -fx-background-color: #8a3e49;
+}
+
+.account-button {
+    -fx-background-color: #A74C59;
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 5px;
+}
+.account-button:hover {
+    -fx-background-color: #8a3e49;
+}
+
+.piano-labels {
+	-fx-background-color: #734b35;
+}
+
 .chord-button {
-	-fx-background-color: white;
+	-fx-background-color: #A76D4C;
 }
 
 .chord-button.selected {
-	-fx-background-color: blue;
+	-fx-background-color: #734b35;
 }
 
 #bpm {
