@@ -9,7 +9,6 @@ public class Instrument {
 
     private UnitOscillator waveform;
     private int waveformID;
-    private UnitOscillator[] waveformList = new UnitOscillator[4];
     private SegmentedEnvelope envelope;
     private double[] envelopeData = new double[8];
 
