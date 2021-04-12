@@ -106,7 +106,12 @@ public class Controller {
 
 	@FXML
 	private static Slider volumeSlider;
-	
+
+	/**
+	 * This function instantiates the controller object, setting values like the ActionLog and the GSON serializer
+	 *
+	 * @return nothing
+	 */
 	public Controller() {
 		//Set the file to null as default
 		projectFile = null;
@@ -135,33 +140,63 @@ public class Controller {
 		//Set selected notes
 		selectedNotes = new Button[] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
 	}
-	
+
+	/**
+	 * This function sets controller's stage value (for the filechooser)
+	 *
+	 * @param stage - the stage associated with the controller
+	 * @return nothing
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
 
+	/**
+	 * This function sets the controller's synth value
+	 *
+	 * @param synth - the synth object associated with the controller
+	 * @return nothing
+	 */
 	public void setSynth(Synthesizer synth) {
 		this.synth = synth;
 	}
 
-	// Show the piano roll when the piano roll button is pressed
+	/**
+	 * This function shows the piano roll when the piano roll button is pressed
+	 *
+	 * @param event - the action event object containing information about the particular action event
+	 * @return nothing
+	 */
 	@FXML
 	public void showPianoRoll(ActionEvent event) {
 		pianoRoll.setVisible(true);
 		arrangementEditor.setVisible(false);
 	}
 
-	// Show the arrangement when the arrangement button is pressed
+	/**
+	 * This function shows the arrangement when the arrangement button is pressed
+	 *
+	 * @param action - the action event object containing information about the particular action event
+	 * @return nothing
+	 */
 	@FXML
 	public void showArrangementEditor(ActionEvent event) {
 		pianoRoll.setVisible(false);
 		arrangementEditor.setVisible(true);
 	}
 
+	/**
+	 * This function determines what to do when one of the BPM buttons is clicked (increment/decrement)
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
 	public void onBPMButtonClick(MouseEvent e) {
 		int bpmValue = Integer.parseInt(bpmLabel.getText());
 
+		//Grab the button's ID
 		String buttonID = ((Button)e.getSource()).getId();
+
 		try {
 			//Add the action
 			actionLog.AddAction(
@@ -174,16 +209,30 @@ public class Controller {
 			System.out.println("An unexpected error has occured. - BPM");
 			e1.printStackTrace();
 		}
+
+		//Change the label
+		bpmLabel.setText(String.valueOf(bpmValue));
+
+		//Change the BPM value
 		changeBPM(String.valueOf(bpmValue));
 	}
 
+	/**
+	 * This function changes the BPM in the synth
+	 *
+	 * @param bpmValue - the bpm value to update the synth to. Is a string for semantics purposes with the ActionLog
+	 * @return nothing
+	 */
 	public void changeBPM(String bpmValue) {
 		synth.setBPM(Integer.parseInt(bpmValue));
-
-		bpmLabel.setText(bpmValue);
 	}
 
-	// Add a new instrument when the add instrument button is clicked
+	/**
+	 * This function adds a new instrument when the add instrument button is clicked
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
 	@FXML
 	public void onAddInstrumentClick(MouseEvent e) {
 		addInstrument();
@@ -220,24 +269,7 @@ public class Controller {
 			System.out.println("Max instruments");
 		}
 	}
-	public void onSignInClick(MouseEvent e) {
-		signin();
-	}
 
-	public void signin() {
-		Stage window = new Stage();
-		//Scene scene = new Scene(primarygridpane,400,500);
-		SigninForm signin = new SigninForm();
-		signin.start(window);
-
-	}
-
-	public void onSignupClick(MouseEvent e){signup();}
-
-	public void signup(){
-		boolean result = SignUpForm.display("Chocolate Chiptunes", "Sign-Up Form");
-		System.out.println(result);
-	}
 	/*
 	public void removeInstrument(Button buttonToRemove) {
 		// Get the current instrument count
@@ -268,7 +300,55 @@ public class Controller {
 				}
 	}
 */
-	// When an instrument in the list is clicked, change the envelope values
+
+	/**
+	 * This function calls the signin function when the sign in button is clicked
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
+	public void onSignInClick(MouseEvent e) {
+		signin();
+	}
+
+
+	/**
+	 * This function displays the sign in form
+	 *
+	 * @return nothing
+	 */
+	public void signin() {
+		Stage window = new Stage();
+		//Scene scene = new Scene(primarygridpane,400,500);
+		SigninForm signin = new SigninForm();
+		signin.start(window);
+	}
+
+	/**
+	 * This function calls the signup function when the signup button is clicked
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
+	public void onSignupClick(MouseEvent e){signup();}
+
+	/**
+	 * This function displays the sign up form
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
+	public void signup(){
+		boolean result = SignUpForm.display("Chocolate Chiptunes", "Sign-Up Form");
+		System.out.println(result);
+	}
+
+	/**
+	 * This function hooks up the selected instrument to the synth, and sets the GUI's slider/waveform based on the selected instrument
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
 	@FXML
 	public void onInstrumentButtonClick(MouseEvent e) {
 		// Get the button object of the current instrument
@@ -305,7 +385,12 @@ public class Controller {
 		releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
 	}
 
-	// Change the waveform of the current instrument when a waveform is selected
+	/**
+	 * This function determines what to do when one of the waveform radio buttons is clicked
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
 	@FXML
 	public void onWaveformClick(MouseEvent e) {
 		// Get the button object of the current instrument
@@ -351,6 +436,12 @@ public class Controller {
 		changeWaveform(waveform);
 	}
 
+	/**
+	 * This function changes the waveform selected in the synth
+	 *
+	 * @param waveform - the radiobutton used to change the synth's waveform (contains the waveformID)
+	 * @return nothing
+	 */
 	public void changeWaveform(Toggle waveform) {
 		synth.disconnectInstrument();
 		// Retrieve the waveform ID and set the waveform of the instrument
@@ -360,9 +451,14 @@ public class Controller {
 		synth.connectInstrument();
 	}
 
-	// Update the envelope of the instrument when the user changes a slider value
+	/**
+	 * This function determines what to do when any of the instrument sliders are changed
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
 	@FXML
-	public void onSliderChanged(MouseEvent e) {
+	public void onInstrumentSliderChanged(MouseEvent e) {
 		//Grab the affected slider
 		Slider sliderChanged = (Slider) e.getSource();
 
@@ -384,18 +480,14 @@ public class Controller {
 			case "releaseSlider":
 				sliderIndex = Instrument.RELEASE_VALUE;
 				break;
-			case "volumeSlider":
-				//System.out.println("\n\n\n\n Changing Volume to" + sliderChanged.getValue() + "\n\n\n\n");
-				synth.changeVolume(sliderChanged.getValue());
-				return;
 		}
 
 		//Grab old/new slider values
 		double oldValue = synth.getSelectedInstrument().getEnvelopeData()[sliderIndex],
 				newValue = sliderChanged.getValue();
 
-		//Add the action if the values differ
-		if(oldValue != newValue) {
+		//Add the action if the values differ and the slider index is valid
+		if(oldValue != newValue && sliderIndex != -1) {
 			try {
 				//Add the action
 				actionLog.AddAction(
@@ -413,6 +505,56 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * This function determines what to do when the volume slider is changed
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
+	@FXML
+	public void onVolumeSliderChanged(MouseEvent e){
+		//Grab the affected slider
+		Slider sliderChanged = (Slider) e.getSource();
+
+		//Grab old/new slider values
+		double oldValue = synth.getVolume(),
+				newValue = sliderChanged.getValue();
+
+		//Add the action if the values differ
+		if(oldValue != newValue) {
+			try {
+				//Add the action
+				actionLog.AddAction(
+						oldValue,
+						newValue,
+						sliderChanged,
+						sliderChanged.getClass().getMethod("setValue", double.class),
+						this.getClass().getMethod("changeVolume", double.class));
+			} catch (NoSuchMethodException | SecurityException e1) {
+				System.out.println("An unexpected error has occured.");
+				e1.printStackTrace();
+			}
+
+			changeVolume(newValue);
+		}
+	}
+
+	/**
+	 * This function changes the master volume of the synth
+	 *
+	 * @param volume - the volume to change the synth's master volume to
+	 * @return nothing
+	 */
+	public void changeVolume(double volume){
+		synth.changeVolume(volume);
+	}
+
+	/**
+	 * This function takes the values from all instrument sliders and updates the currently selected intrument's envelope
+	 *
+	 * @param value - has no purpose, just a semantic value for the ActionLog
+	 * @return nothing
+	 */
 	public void updateEnvelope(double value) {
 	// Get the values of the individual sliders
 		double attackValue = (double) attackSlider.getValue();
@@ -433,8 +575,16 @@ public class Controller {
 		synth.getSelectedInstrument().updateEnvelope(envelopeData);
 	}
 
+	/**
+	 * This function handles selecting and unselecting notes in the piano roll
+	 *
+	 * If a note is selected in one row, and another note is selected in the same row, the first note will be unselected
+	 *
+	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @return nothing
+	 */
 	@FXML
-	public void onChordButtonClicked(MouseEvent e) {
+	public void onNoteButtonClicked(MouseEvent e) {
 		Button note = (Button)e.getSource();
 
 		ObservableList<String> classes = note.getStyleClass();
@@ -470,31 +620,16 @@ public class Controller {
 		}
 	}
 
-	@FXML
-	public void onChordButtonDragged(MouseEvent e) {
-		System.out.println("HERE");
-		if(e.isControlDown()) {
-			Button chord = (Button)e.getSource();
-
-			ObservableList<String> classes = chord.getStyleClass();
-
-			if(classes.contains("selected"))
-				classes.remove("selected");
-			else
-				classes.add("selected");
-		}
-	}
-
 	/**
 	 * This function determines what to do based on the keys pressed while on the gridpane (piano adapter, ctrl functions, etc.)
 	 *
-	 * @param event - the key event object containing information about the particular key event
+	 * @param e - the key event object containing information about the particular key event
 	 * @return nothing
 	 */
 	@FXML
-	public void onGridKeyPressed(KeyEvent event) {
+	public void onGridKeyPressed(KeyEvent e) {
 
-		KeyCode keyCode = event.getCode();
+		KeyCode keyCode = e.getCode();
 
 		//Begin special function processing
 		if(event.isControlDown()) {
@@ -522,7 +657,13 @@ public class Controller {
 			}
 		}
 	}
-	
+
+	/**
+	 * This function saves the project to a JSON file
+	 *
+	 * @param newFile - Whether or not to save the project as a new file
+	 * @return nothing
+	 */
 	@FXML
 	public void saveFile(boolean newFile) {
 		if(projectFile == null || !newFile)
@@ -539,7 +680,12 @@ public class Controller {
 			}
 		}
 	}
-	
+
+	/**
+	 * This function loads a project JSON file and modifies the GUI/Synth to reflect the correct project state
+	 *
+	 * @return nothing
+	 */
 	@FXML
 	public void loadFile() {
 		File file = fileChooser.showOpenDialog(stage);
