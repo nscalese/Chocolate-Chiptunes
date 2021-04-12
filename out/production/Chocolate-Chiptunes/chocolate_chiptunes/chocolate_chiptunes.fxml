@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onGridKeyPressed" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@chocolate_chiptunes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chocolate_chiptunes.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onGridKeyPressed" prefHeight="1080.0" prefWidth="1920.0" styleClass="main-grid" stylesheets="@chocolate_chiptunes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chocolate_chiptunes.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="227.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="0.0" prefWidth="419.0" />
@@ -260,65 +261,29 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <Label text="Account Login" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <Label text="Account Login" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="20.0" />
+                                       </GridPane.margin>
                                     </Label>
-                                    <GridPane GridPane.rowIndex="1">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Label text="Username:" textFill="WHITE" GridPane.halignment="RIGHT">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                             <GridPane.margin>
-                                                <Insets right="10.0" />
-                                             </GridPane.margin>
-                                          </Label>
-                                          <TextField maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                             <GridPane.margin>
-                                                <Insets />
-                                             </GridPane.margin>
-                                          </TextField>
-                                       </children>
-                                    </GridPane>
-                                    <Button fx:id="btnSignup" mnemonicParsing="false" onMouseClicked="#onSignupClick" prefHeight="37.0" prefWidth="213.0" styleClass="account-button" text="Sign Up" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <Button fx:id="btnSignup" mnemonicParsing="false" onMouseClicked="#onSignupClick" prefHeight="37.0" prefWidth="213.0" styleClass="account-button" text="Sign Up" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
+                                       <GridPane.margin>
+                                          <Insets right="15.0" />
+                                       </GridPane.margin>
                                     </Button>
-                                    <GridPane GridPane.rowIndex="2">
-                                       <children>
-                                          <Label text="Password:" textFill="WHITE" GridPane.halignment="RIGHT">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                             <GridPane.margin>
-                                                <Insets right="10.0" />
-                                             </GridPane.margin>
-                                          </Label>
-                                          <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                                       </children>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                    </GridPane>
-                                    <Button fx:id="btnSignin" layoutX="220.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#onSignInClick" prefHeight="37.0" prefWidth="213.0" styleClass="account-button" text="Sign In" GridPane.rowIndex="3">
+                                    <Button fx:id="btnSignin" layoutX="220.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#onSignInClick" prefHeight="37.0" prefWidth="213.0" styleClass="account-button" text="Sign In" GridPane.rowIndex="2">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
+                                       <GridPane.margin>
+                                          <Insets left="15.0" />
+                                       </GridPane.margin>
                                     </Button>
                                  </children>
                                  <padding>
@@ -332,32 +297,33 @@
                               <GridPane VBox.vgrow="ALWAYS">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
                                 <rowConstraints>
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints />
+                                    <RowConstraints />
                                 </rowConstraints>
                                  <children>
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="account-button" text="[ New Project ]" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" prefWidth="200.0" styleClass="account-button" text="[ New Project ]" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="account-button" text="[ Save Project ]" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" prefWidth="200.0" styleClass="account-button" text="[ Save Project ]" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="account-button" text="[ Load Project ]" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" prefWidth="200.0" styleClass="account-button" text="[ Load Project ]" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="account-button" text="[ Export ]" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" prefWidth="200.0" styleClass="account-button" text="[ Export ]" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="System Bold Italic" size="16.0" />
                                        </font>
                                     </Button>
                                  </children>
@@ -432,7 +398,7 @@
       </GridPane>
       <StackPane GridPane.columnSpan="3" GridPane.rowIndex="1">
          <children>
-            <ScrollPane id="arrangement-editor" fx:id="arrangementEditor" fitToHeight="true" fitToWidth="true">
+            <ScrollPane id="arrangement-editor" fx:id="arrangementEditor" fitToHeight="true" fitToWidth="true" styleClass="gray-border">
                <content>
                   <GridPane gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                      <children>
@@ -463,7 +429,7 @@
                   </GridPane>
                </content>
             </ScrollPane>
-            <ScrollPane id="piano-roll" fx:id="pianoRoll" fitToHeight="true" fitToWidth="true" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <ScrollPane id="piano-roll" fx:id="pianoRoll" fitToHeight="true" fitToWidth="true" styleClass="gray-border" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                <content>
                   <HBox id="piano-roll" styleClass="gray-border">
                      <children>
@@ -2559,7 +2525,7 @@
          <content>
             <VBox prefHeight="200.0" prefWidth="100.0" styleClass="gray-border">
                <children>
-                  <GridPane gridLinesVisible="true" styleClass="pattern-list" VBox.vgrow="ALWAYS">
+                  <GridPane gridLinesVisible="true" VBox.vgrow="ALWAYS">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -2571,15 +2537,25 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="pattern-button" text="Pattern 1" HBox.hgrow="ALWAYS" />
+                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="pattern-button" text="Pattern 1" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                            <children>
-                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-padding: 0;" styleClass="pattern-button" text="New Pattern" HBox.hgrow="ALWAYS" />
+                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-padding: 0;" styleClass="pattern-button" text="New Pattern" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                      </children>
+                     <styleClass>
+                        <String fx:value="pattern-list" />
+                        <String fx:value="gray-border" />
+                     </styleClass>
                   </GridPane>
                </children>
             </VBox>
