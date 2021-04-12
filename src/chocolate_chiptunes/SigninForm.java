@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 
 public class SigninForm extends Application {
 
+    Controller changelabel;
+    TextField username;
+    boolean auth;
     public static void main(String[] args) {
         launch(args);
     }
@@ -67,6 +70,9 @@ public class SigninForm extends Application {
                 signin_label.setText("User is authenticated");
                 signin_label.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");
                 boolean auth = Authenticated.display("Chocolate Chiptunes", "Hello! " + username.getText() + " you are now logged in.");
+                changelabel.setWelLabel("Hello! " + username.getText() + " you are now logged in.");
+                changelabel.setBtnSignin(false);
+                changelabel.setBtnSignup(false);
                 System.out.println(auth);
             } else {
                 System.out.println("Username or Password is not correct (Wont say more for security reasons)");
@@ -91,6 +97,8 @@ public class SigninForm extends Application {
         window.setScene(scene);
         window.show();
     }
-
+    public void isLogged(Controller test){
+        changelabel = test;
+    }
 
 }

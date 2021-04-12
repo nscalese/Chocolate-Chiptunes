@@ -1,12 +1,12 @@
 package chocolate_chiptunes;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.effect.Effect;
 import javafx.scene.effect.InnerShadow;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -16,18 +16,10 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.stream.JsonReader;
 
 public class Controller {
 	private Stage stage;
@@ -64,6 +56,9 @@ public class Controller {
 
 	@FXML
 	private Button btnSignup;
+
+	@FXML
+	private Label welcomelbl;
 
 	@FXML
 	private Label bpmLabel;
@@ -176,7 +171,7 @@ public class Controller {
 	/**
 	 * This function shows the arrangement when the arrangement button is pressed
 	 *
-	 * @param action - the action event object containing information about the particular action event
+	 * @param event - the action event object containing information about the particular action event
 	 * @return nothing
 	 */
 	@FXML
@@ -322,8 +317,21 @@ public class Controller {
 		//Scene scene = new Scene(primarygridpane,400,500);
 		SigninForm signin = new SigninForm();
 		signin.start(window);
+		signin.isLogged(this);
 	}
 
+
+	public void setBtnSignin(boolean invisible){
+		btnSignin.setVisible(invisible);
+	}
+
+	public void setBtnSignup(boolean invisible){
+		btnSignup.setVisible(invisible);
+	}
+
+	public void setWelLabel(String lbltest){
+		welcomelbl.setText(lbltest);
+	}
 	/**
 	 * This function calls the signup function when the signup button is clicked
 	 *
@@ -335,7 +343,7 @@ public class Controller {
 	/**
 	 * This function displays the sign up form
 	 *
-	 * @param e - the mouse event object containing information about the particular mouse event
+	 * @param  - the mouse event object containing information about the particular mouse event
 	 * @return nothing
 	 */
 	public void signup(){
@@ -632,7 +640,7 @@ public class Controller {
 		KeyCode keyCode = e.getCode();
 
 		//Begin special function processing
-		if(event.isControlDown()) {
+		if(e.isControlDown()) {
 			switch(keyCode) {
 			case Z:
 				actionLog.Undo();
@@ -641,7 +649,7 @@ public class Controller {
 				actionLog.Redo();
 				break;
 			case S:
-				if(event.isShiftDown())
+				if(e.isShiftDown())
 					saveFile(true);
 				else
 					saveFile(false);
