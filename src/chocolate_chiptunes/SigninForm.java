@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 public class SigninForm extends Application {
 
     Controller changelabel;
-    TextField username;
-    boolean auth;
     public static void main(String[] args) {
         launch(args);
     }
@@ -86,8 +84,6 @@ public class SigninForm extends Application {
                 System.out.println("Username or Password is not correct (Wont say more for security reasons)");
                 signin_label.setText("Username ot Password is not correct");
                 signin_label.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
-                //String test = helper.ResetPassword("coolchill@outlook.com");
-                //System.out.println(test);
 
             }
 

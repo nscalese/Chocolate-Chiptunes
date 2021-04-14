@@ -16,9 +16,12 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.util.regex.Pattern;
+
 public class SignUpForm {
     //Create variable
     static boolean answer;
+
 
     public static boolean display(String title, String message) {
         Authenticator helper = new Authenticator();
@@ -28,7 +31,7 @@ public class SignUpForm {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Scene scene = new Scene(grid,400, 500);
+        Scene scene = new Scene(grid,500, 600);
 
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
@@ -82,6 +85,66 @@ public class SignUpForm {
         clBtn.setMaxWidth(190);
         grid.add(clBtn,1,6);
 
+
+        /**
+         * Password must contain a lower case letter
+         * ✖ Password must contain an upper case letter
+         * ✖ Password must contain a special character
+         * ✓ Password must contain a number
+         * ✖ Password must contain at least 8 characters
+         */
+
+        Label lowercase = new Label();
+        lowercase.setText("Password must contain a lower case letter");
+        Label uppercase = new Label();
+        uppercase.setText("Password must contain an upper case letter");
+        Label specialcase = new Label();
+        specialcase.setText("Password must contain a special character");
+        Label numbercase = new Label();
+        numbercase.setText("Password must contain a number");
+        Label eightcase = new Label();
+        eightcase.setText("Password must contain at least 8 characters and no spaces");
+
+
+        grid.add(lowercase,0,8);
+        grid.add(uppercase,0,9);
+        grid.add(specialcase,0,10);
+        grid.add(numbercase,0,11);
+        grid.add(eightcase,0,12);
+
+        Password.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+            String pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\\^$*.\\[\\]{}\\(\\)?\\-“!@#%&\\/,><\\’:;|_~`])\\S{8,99}$/";
+            if (!newValue) { // when focus lost
+                boolean[] test = isLegalPassword(Password.getText());
+                if(test[0]){
+                    uppercase.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");
+                }else{
+                    uppercase.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }
+                if(test[1]){
+                    lowercase.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");
+                }else{
+                    lowercase.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }
+                if(test[2]){
+                    numbercase.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");
+                }else{
+                    numbercase.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }
+                if(test[3]){
+                    eightcase.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");;
+                }else{
+                    eightcase.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }
+                if(test[4]){
+                    specialcase.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");
+                }else{
+                    specialcase.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }
+            }
+        });
+
+
         Label usercreation_message = new Label();
         usercreation_message.setFont(Font.font ("Courier", FontWeight.NORMAL, 30));
         grid.add(usercreation_message, 0, 7, 2, 1);
@@ -94,10 +157,17 @@ public class SignUpForm {
                 SignUpConformation.display("Chocolate Chiptunes", "Confirm User",Username.getText());
                 window.close();
             } else {
-                System.out.println("User creation failed");
-                usercreation_message.setAlignment(Pos.CENTER);
-                usercreation_message.setText("User creation failed");
-                usercreation_message.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                if(!Password.getText().equals(Passwordr.getText())){
+                    usercreation_message.setAlignment(Pos.CENTER);
+                    usercreation_message.setText("Passwords are not the same");
+                    usercreation_message.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }else{
+                    System.out.println("User creation failed");
+                    usercreation_message.setAlignment(Pos.CENTER);
+                    usercreation_message.setText("User creation failed");
+                    usercreation_message.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                }
+
 
             }
 //            window.close();
@@ -120,4 +190,49 @@ public class SignUpForm {
         return answer;
     }
 
+
+
+    private static boolean[] isLegalPassword(String pass) {
+        boolean[] valid = new boolean[5];
+
+        if (!pass.matches(".*[A-Z].*")){
+            valid[0] = false;
+        }else{
+            valid[0] = true;
+            //System.out.println("Z false");
+        }
+
+        if (!pass.matches(".*[a-z].*")) {
+            valid[1] = false;
+        }else{
+            valid[1] = true;
+            //System.out.println("a false");
+        }
+
+        if (!pass.matches(".*\\d.*")){
+            valid[2] = false;
+        }else{
+            //System.out.println("1 false");
+            valid[2] = true;
+        }
+
+
+        if (!pass.matches("\\S{8,99}")){
+            valid[3] = false;
+        }else{
+            valid[3] = true;
+            //System.out.println("Length false");
+        }
+
+
+        Pattern regex = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]");
+
+        if (!regex.matcher(pass).find()) {
+           valid[4] = false;
+        }else{
+            valid[4] = true;
+            //System.out.println("@ false");
+        }
+        return valid;
+    }
 }
