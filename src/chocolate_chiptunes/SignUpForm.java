@@ -39,64 +39,66 @@ public class SignUpForm {
 //        label.setText(message);
         Label scenetitle = new Label();
         scenetitle.setText(message);
-        scenetitle.setFont(Font.font ("Tahoma", FontWeight.NORMAL, 30));
-        grid.add(scenetitle, 0, 0, 2, 1);
+        scenetitle.setFont(Font.font ("Courier", FontWeight.NORMAL, 30));
+        grid.add(scenetitle, 0, 0, 3, 1);
+        grid.setAlignment(Pos.CENTER);
         // Username field
-        Label username_label = new Label("Username:");
-        grid.add(username_label, 0, 1);
         TextField Username = new TextField();
-        grid.add(Username, 1, 1);
+        Username.setPromptText("Email");
+        Username.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        grid.add(Username, 0, 1);
 
         // password field
-        Label password_label = new Label("Password:");
-        grid.add(password_label, 0, 2);
         TextField Password = new PasswordField();
-        grid.add(Password, 1, 2);
+        Password.setPromptText("Password");
+        Password.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        grid.add(Password, 0, 2);
+
 
         // Repeat password field
-        Label passwordr_label = new Label("Confirm:");
-        grid.add(passwordr_label, 0, 3);
         TextField Passwordr = new PasswordField();
-        grid.add(Passwordr, 1, 3);
+        Passwordr.setPromptText("Confirm Password");
+        Passwordr.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        //TextField Passwordr = new PasswordField();
+        grid.add(Passwordr, 0, 3);
 
-        //Email field
-        Label email_label = new Label("Email:");
-        grid.add(email_label, 0, 4);
-        TextField email = new TextField();
-        grid.add(email, 1, 4);
-
-        // Phone no. field
-        Label phno_label = new Label("Nickname:");
-        grid.add(phno_label, 0, 5);
-        TextField phno = new TextField();
-        grid.add(phno, 1, 5);
+        // Nickname field
+        TextField nickname = new TextField();
+        nickname.setPromptText("Nickname");
+        nickname.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        grid.add(nickname, 0, 4);
         //Create signup button
         Button signUpButton = new Button("Sign-Up");
         HBox suBtn = new HBox(10);
-        //       suBtn.setAlignment(Pos.BOTTOM_LEFT);
+
         suBtn.getChildren().add(signUpButton);
         suBtn.setMaxWidth(190);
         grid.add(suBtn,0,6);
-        // Create cancel button
+
         Button cancelButton = new Button("Cancel");
         HBox clBtn = new HBox(10);
         clBtn.setAlignment(Pos.BOTTOM_RIGHT);
         clBtn.getChildren().add(cancelButton);
         clBtn.setMaxWidth(190);
         grid.add(clBtn,1,6);
+
         Label usercreation_message = new Label();
-        usercreation_message.setFont(Font.font ("Tahoma", FontWeight.NORMAL, 30));
+        usercreation_message.setFont(Font.font ("Courier", FontWeight.NORMAL, 30));
         grid.add(usercreation_message, 0, 7, 2, 1);
         //Clicking will set answer and close window
         signUpButton.setOnAction(e -> {
-            boolean success = helper.SignUpUser(Username.getText(), Password.getText(), email.getText(), phno.getText());
+            boolean success = helper.SignUpUser(Username.getText(), Password.getText(), Username.getText(), nickname.getText());
             if (success) {
 
                 System.out.println("Enter your validation code from email");
                 SignUpConformation.display("Chocolate Chiptunes", "Confirm User",Username.getText());
+                window.close();
             } else {
                 System.out.println("User creation failed");
+                usercreation_message.setAlignment(Pos.CENTER);
                 usercreation_message.setText("User creation failed");
+                usercreation_message.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+
             }
 //            window.close();
         });

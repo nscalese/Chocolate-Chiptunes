@@ -36,13 +36,14 @@ public class ForgotPasswordForm {
 
         grid.add(scenetitle, 0, 0, 2, 1);
         // email field
-        Label email_label = new Label("Username:");
-        grid.add(email_label, 0, 1);
+
         TextField txtusername = new TextField();
-        grid.add(txtusername, 1, 1);
+        txtusername.setPromptText("Email");
+        txtusername.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        grid.add(txtusername, 0, 1);
 
         //Create password reset link button
-        Button passwordResetLinkButton = new Button("Reset Request");
+        Button passwordResetLinkButton = new Button("Request reset code");
         HBox suBtn = new HBox(10);
         suBtn.setAlignment(Pos.CENTER);
         suBtn.getChildren().add(passwordResetLinkButton);

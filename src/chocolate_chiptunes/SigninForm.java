@@ -4,7 +4,10 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -60,30 +63,38 @@ public class SigninForm extends Application {
         vb.getChildren().add(image_label);
         hbButtons.setAlignment(Pos.CENTER);
 
-
+        //System.out.println("TEST?");
         signin_button = new Button("Sign In");
         Label signin_label = new Label();
         signin_button.setOnAction((ActionEvent e) -> {
             String result = helper.ValidateUser(username.getText(), password.getText());
             if (result != null) {
                 System.out.println(username.getText());
+                String[] t = (String.valueOf(JWT_Parser.getPayload(result)).split(","));
+                String[] nick = t[7].split(":");
+                String nickname = nick[1].replace('\"',' ').strip();
+
+
                 signin_label.setText("User is authenticated");
                 signin_label.setStyle("-fx-text-fill: #4cff00; -fx-font-size: 16px;");
-                boolean auth = Authenticated.display("Chocolate Chiptunes", "Hello! " + username.getText() + " you are now logged in.");
-                changelabel.setWelLabel("Hello! " + username.getText() + " you are now logged in.");
+                //boolean auth = Authenticated.display("Chocolate Chiptunes", "Hello! " + username.getText() + " you are now logged in.");
+                changelabel.setWelLabel("Hello! " + nickname + " you are now logged in.");
                 changelabel.setBtnSignin(false);
                 changelabel.setBtnSignup(false);
-                System.out.println(auth);
+                window.close();
             } else {
                 System.out.println("Username or Password is not correct (Wont say more for security reasons)");
                 signin_label.setText("Username ot Password is not correct");
                 signin_label.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+                //String test = helper.ResetPassword("coolchill@outlook.com");
+                //System.out.println(test);
+
             }
 
         });
         forgotpassword_but = new Button("Forgot password?");
         forgotpassword_but.setOnAction(e -> {
-            boolean result = ForgotPasswordForm.display("Chocolate Chiptunes", "Forgot password");
+            boolean result = ForgotPasswordForm.display("Chocolate Chiptunes - Forgot Password", "Forgot password?");
             System.out.println(result);
         });
         signin_button.setMaxWidth(150);

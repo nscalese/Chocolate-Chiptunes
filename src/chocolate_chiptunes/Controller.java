@@ -347,7 +347,7 @@ public class Controller {
 	 * @return nothing
 	 */
 	public void signup(){
-		boolean result = SignUpForm.display("Chocolate Chiptunes", "Sign-Up Form");
+		boolean result = SignUpForm.display("Chocolate Chiptunes - Sign Up", "Sign-Up Form");
 		System.out.println(result);
 	}
 
