@@ -56,9 +56,10 @@ public class ActionLog {
 				
 				//Cast the old value to it's determined type
 				value = Class.forName(valueClassName).cast(value);
-				
-				//Invoke the method associated with the object
-				prevAction.getObjectMethodToInvoke().invoke(object, value);
+
+				//Invoke the method associated with the object (if not null)
+				if(prevAction.getObjectMethodToInvoke() != null)
+					prevAction.getObjectMethodToInvoke().invoke(object, value);
 				
 				//Invoke the method associated with the controller
 				prevAction.getControllerMethodToInvoke().invoke(controller, value);
@@ -91,8 +92,9 @@ public class ActionLog {
 				//Cast the new value to it's determined type
 				value = Class.forName(valueClassName).cast(value);
 				
-				//Invoke the method associated with the object
-				nextAction.getObjectMethodToInvoke().invoke(object, value);
+				//Invoke the method associated with the object (if not null)
+				if(nextAction.getObjectMethodToInvoke() != null)
+					nextAction.getObjectMethodToInvoke().invoke(object, value);
 				
 				//Invoke the method associated with the controller
 				nextAction.getControllerMethodToInvoke().invoke(controller, value);
