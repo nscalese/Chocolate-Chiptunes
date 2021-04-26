@@ -24,7 +24,7 @@ An SNES/NES style music creation tool.
 ## Getting Started
 ### Installation and Setup
 1. Clone this repository
-		> git clone git://github.com/nscalese/Chocolate-Chiptunes.git
+	> git clone git://github.com/nscalese/Chocolate-Chiptunes.git
 2. We created this program in IntelliJ IDEA and recommend running it there to prevent issues
 	
 ### Run
