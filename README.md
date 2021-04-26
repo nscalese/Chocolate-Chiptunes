@@ -33,9 +33,10 @@ An SNES/NES style music creation tool.
 	* In the new box, type: 
 		> --module-path [Path to the 'Chocolate-Chiptunes\lib\javafx-sdk-11.0.2\lib' folder on your disk] --add-modules=javafx.controls,javafx.fxml
 	* Click apply
-2. You will then need to add the Maven files to the project structure. To do so...
-	* Go to File -> Project Structure -> Modules -> Dependencies -> Click on the + at the bottom of the list -> JARs or Dependencies -> Then add the repository.zip file at the root of the project folder
-	* Click apply
+2. You will then need to add the Maven files to your .m2 folder. To do so...
+	* Find the repository.7z file in the root of the project directory and open it
+	* Go to your C:/Users/[your name]/.m2 folder and paste in the repository folder from within the .7z file
+	* Overwrite any conflicts
 3. After you're done, you should be able to run the program by right-clicking on Main.java and then clicking "Run 'Main.main()'"
 ## Demo video
 
