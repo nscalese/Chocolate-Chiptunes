@@ -157,5 +157,14 @@
     <orderEntry type="library" exported="" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.json:json:20170516" level="project" />
     <orderEntry type="library" exported="" name="Maven: software.amazon.ion:ion-java:1.0.2" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/gson-2.8.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

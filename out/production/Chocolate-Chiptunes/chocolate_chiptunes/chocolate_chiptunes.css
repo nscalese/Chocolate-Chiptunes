@@ -1,5 +1,9 @@
+.main-grid {
+    -fx-background-color: #A76D4C;
+}
+
 .switch-button {
-	-fx-border-color: gray;
+	-fx-border-color: #2b2b2b;
 	-fx-background-color: white;
 	-fx-border-radius: 0px;
 }
@@ -17,7 +21,7 @@
 }
 
 .gray-border {
-	-fx-border-color: gray;
+	-fx-border-color: #734b35;
 	-fx-border-width: 1px;
 	-fx-border-radius: 0;
 	-fx-background-color: #734b35;
@@ -99,7 +103,7 @@
 }
 
 .chord-button.selected {
-	-fx-background-color: #734b35;
+	-fx-background-color: #ffd966;
 }
 
 #bpm {

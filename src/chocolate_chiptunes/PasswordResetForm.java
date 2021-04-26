@@ -29,25 +29,25 @@ public class PasswordResetForm {
 
         grid.add(scenetitle, 0, 0, 2, 1);
 
-        // PIN field
-        Label lblusername = new Label("Username:");
-        grid.add(lblusername, 0, 1);
+        // Username field
         TextField txtusername = new TextField();
+        txtusername.setPromptText("Email");
+        txtusername.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
         txtusername.setText(username);
-        grid.add(txtusername, 1, 1);
+        grid.add(txtusername, 0, 1);
 
 
         // PIN field
-        Label lblpincode = new Label("PIN Code:");
-        grid.add(lblpincode, 0, 2);
-        TextField txtpincode = new TextField();
-        grid.add(txtpincode, 1, 2);
+        TextField txtresetcode = new TextField();
+        txtresetcode.setPromptText("Reset code");
+        txtresetcode.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        grid.add(txtresetcode, 0, 2);
 
         // password field
-        Label lblpassword = new Label("Password:");
-        grid.add(lblpassword, 0, 3);
         TextField txtpassword = new PasswordField();
-        grid.add(txtpassword, 1, 3);
+        txtpassword.setPromptText("New Password");
+        txtpassword.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        grid.add(txtpassword, 0, 3);
 
 
 
@@ -72,8 +72,9 @@ public class PasswordResetForm {
         resetPassword.setOnAction(e -> {
             answer = true;
             try {
-                helper.UpdatePassword(txtusername.getText(), txtpassword.getText(), txtpincode.getText());
+                helper.UpdatePassword(txtusername.getText(), txtpassword.getText(), txtresetcode.getText());
                 lblmessage.setText("Password reset successfully!");
+                lblmessage.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
             }catch (Exception exp)
             {
                 System.out.println(exp);
