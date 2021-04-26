@@ -585,38 +585,89 @@ public class Controller {
 	 */
 	@FXML
 	public void onNoteButtonClicked(MouseEvent e) {
+		//Grab the note button from the source
 		Button note = (Button)e.getSource();
 
-		ObservableList<String> classes = note.getStyleClass();
-
+		//Grab the note button's column in the gridpane
 		int noteColumn = GridPane.getColumnIndex(note);
-		int noteRow = GridPane.getRowIndex(note);
+
+		//Grab the style classes for reuse
+		ObservableList<String> styleClasses = note.getStyleClass();
+
+		//Initialize old/new note buttons
+		NoteButton oldNoteButton = new NoteButton(), newNoteButton = new NoteButton();
 
 		/* If the note was selected before...
 		 *  1. Un-highlight it
 		 *  2. Reset arrays to null values
 		 */
-		if(classes.contains("selected")) {
-			classes.remove("selected");
+		if(styleClasses.contains("selected")) {
+			oldNoteButton.setNoteButton(note);
+			oldNoteButton.setSelected(true);
+
+			newNoteButton.setNoteButton(note);
+			newNoteButton.setSelected(false);
+
+			//Otherwise, check if there is already a selected note in the same column
+		} else {
+
+			newNoteButton.setNoteButton(note);
+			newNoteButton.setSelected(true);
+
+			// If there is, un-highlight the other note
+			if(selectedNotes[noteColumn] != null) {
+				oldNoteButton.setNoteButton(selectedNotes[noteColumn]);
+				oldNoteButton.setSelected(true);
+			} else {
+				oldNoteButton.setNoteButton(note);
+				oldNoteButton.setSelected(false);
+			}
+		}
+
+		try {
+			//Add the action
+			actionLog.AddAction(
+					oldNoteButton,
+					newNoteButton,
+					note,
+					null,
+					this.getClass().getMethod("updateNote", NoteButton.class));
+		} catch (NoSuchMethodException | SecurityException e1) {
+			System.out.println("An unexpected error has occured.");
+			e1.printStackTrace();
+		}
+
+		//Update the note
+		updateNote(newNoteButton);
+	}
+
+	public void updateNote(NoteButton noteButton){
+		//Grab the button from the note
+		Button note = noteButton.getNoteButton();
+
+		//Grab the style classes for reuse
+		ObservableList<String> styleClasses = note.getStyleClass();
+
+		//Grab the note buttons row/column in the gridpane
+		int noteColumn = GridPane.getColumnIndex(note);
+		int noteRow = GridPane.getRowIndex(note);
+
+		if(!noteButton.selected) {
+			styleClasses.remove("selected");
 			selectedNotes[noteColumn] = null;
 			noteFrequencies[noteColumn] = -1.0;
 
-		//Otherwise, check if there is already a selected note in the same column
+			//Otherwise, check if there is already a selected note in the same column
 		} else {
-			// If there is, un-highlight the other note and replace the values in the arrays
+			// If there is, un-highlight the other note
 			if(selectedNotes[noteColumn] != null) {
 				selectedNotes[noteColumn].getStyleClass().remove("selected");
-
-				classes.add("selected");
-				selectedNotes[noteColumn] = note;
-				noteFrequencies[noteColumn] = Utils.Math.getKeyFrequency(88 - noteRow);
-
-			// Otherwise, simply highlight the note and add it to the arrays
-			} else {
-				classes.add("selected");
-				selectedNotes[noteColumn] = note;
-				noteFrequencies[noteColumn] = Utils.Math.getKeyFrequency(88 - noteRow);
 			}
+
+			//Set the values in the array
+			styleClasses.add("selected");
+			selectedNotes[noteColumn] = note;
+			noteFrequencies[noteColumn] = Utils.Math.getKeyFrequency(88 - noteRow);
 		}
 	}
 
@@ -632,7 +683,7 @@ public class Controller {
 		KeyCode keyCode = e.getCode();
 
 		//Begin special function processing
-		if(event.isControlDown()) {
+		if(e.isControlDown()) {
 			switch(keyCode) {
 			case Z:
 				actionLog.Undo();
@@ -641,7 +692,7 @@ public class Controller {
 				actionLog.Redo();
 				break;
 			case S:
-				if(event.isShiftDown())
+				if(e.isShiftDown())
 					saveFile(true);
 				else
 					saveFile(false);
@@ -704,6 +755,30 @@ public class Controller {
 				//Error here
 			}
 		}
-		
+	}
+
+	/**
+	 * Note Button class that contains the button clicked and it's grid position
+	 */
+	public class NoteButton {
+		private NoteButton previousNote;
+		private Button noteButton;
+		private boolean selected;
+
+		public Button getNoteButton(){
+			return noteButton;
+		}
+
+		public void setNoteButton(Button button){
+			this.noteButton = button;
+		}
+
+		public boolean getSelected(){
+			return selected;
+		}
+
+		public void setSelected(boolean selected){
+			this.selected = selected;
+		}
 	}
 }
