@@ -30,7 +30,8 @@ An SNES/NES style music creation tool.
 ### Run
 1. Upon running the Main class from within IntelliJ, you will likely be told that there are JavaFX components missing. To fix this:
 	* Go to Run -> Edit Configurations... -> Application -> Main -> Modify Options -> Add VM options
-	* In the new box, type --module-path [Path to the 'Chocolate-Chiptunes\lib\javafx-sdk-11.0.2\lib' folder on your disk] --add-modules=javafx.controls,javafx.fxml
+	* In the new box, type: 
+		> --module-path [Path to the 'Chocolate-Chiptunes\lib\javafx-sdk-11.0.2\lib' folder on your disk] --add-modules=javafx.controls,javafx.fxml
 	* Click apply
 2. You will then need to add the Maven files to the project structure. To do so...
 	* Go to File -> Project Structure -> Modules -> Dependencies -> Click on the + at the bottom of the list -> JARs or Dependencies -> Then add the repository.zip file at the root of the project folder
@@ -52,5 +53,5 @@ How to record your screen: https://www.techradar.com/how-to/record-your-screen
 ## Contributors
 
 * Dawn Ramsey (ramseyd1@wit.edu), Team Lead
-* Nicholas Scalese (), role
-* ...
+* Nicholas Scalese (scalesen@wit.edu), Developer
+* Giovanni Rico (ricog@wit.edu), Developer
