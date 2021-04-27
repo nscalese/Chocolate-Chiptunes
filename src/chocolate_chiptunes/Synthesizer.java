@@ -73,9 +73,13 @@ public class Synthesizer extends Circuit {
     public void removeInstrument() {
         if(selectedInstrumentID == instrumentCount - 1){
             disconnectInstrument();
-            instruments[--instrumentCount] = null;
-            setSelectedInstrument(instrumentCount - 1);
-            connectInstrument();
+            instrumentCount--;
+            //Prevent reconnecting when there are no instruments
+            if(instrumentCount > 1){
+                instruments[instrumentCount] = null;
+                setSelectedInstrument(instrumentCount - 1);
+                connectInstrument();
+            }
         } else {
             instruments[--instrumentCount] = null;
         }
