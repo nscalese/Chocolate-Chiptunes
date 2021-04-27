@@ -6,10 +6,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -230,11 +230,74 @@ public class Controller {
 	 */
 	@FXML
 	public void onAddInstrumentClick(MouseEvent e) {
-		addInstrument();
+		// Get the current instrument count
+		int instrumentCount = synth.getInstrumentCount();
+
+		// If there are 4 instruments or more, move on
+		if(instrumentCount < 4) {
+			//Increment the count
+			instrumentCount++;
+
+			// Create a new Instrument button and add the necessary functionality
+			Button newInstrument = new Button("Instrument " + instrumentCount);
+
+			//Set the instrument number in the user data (0 based)
+			newInstrument.setUserData(instrumentCount - 1);
+
+			//Set the instruments id based on the instrument count (1 based)
+			newInstrument.setId("instrument" + instrumentCount);
+
+			//Set the instruments on click event
+			newInstrument.setOnMouseClicked(event -> {
+				onInstrumentButtonClick(event);
+			});
+
+			//Set the new instruments max height and width, based on the pre-existing add instrument button
+			newInstrument.setMaxHeight(btnAddInstrument.getMaxHeight());
+			newInstrument.setMaxWidth(btnAddInstrument.getMaxWidth());
+
+			//Add the instrument-button class to the instruments style class list
+			newInstrument.getStyleClass().add("instrument-button");
+
+			//Attempt to add this action to the action log (using the InstrumentButton class for the old/new values)
+			try {
+				InstrumentButton oldInstrumentButton = new InstrumentButton(), newInstrumentButton = new InstrumentButton();
+
+				//Set the old instrument button fields
+				oldInstrumentButton.setInstrumentButton(newInstrument);
+				oldInstrumentButton.setExists(false);
+
+				//Set the new instrument button fields
+				newInstrumentButton.setInstrumentButton(newInstrument);
+				newInstrumentButton.setExists(true);
+
+				//Add the action
+				actionLog.AddAction(
+						oldInstrumentButton,
+						newInstrumentButton,
+						newInstrument,
+						null,
+						this.getClass().getMethod("alterInstrument", InstrumentButton.class));
+			} catch (NoSuchMethodException | SecurityException e1) {
+				System.out.println("An unexpected error has occured.");
+				e1.printStackTrace();
+			}
+
+			//Add the instrument
+			addInstrument(newInstrument);
+		} else {
+			System.out.println("Max number of instruments created.");
+		}
 	}
 
-	public void addInstrument() {
-		// Get the current instrument count
+	public void alterInstrument(InstrumentButton instrumentButton){
+		if(instrumentButton.getExists())
+			addInstrument(instrumentButton.getInstrumentButton());
+		else
+			removeInstrument(instrumentButton.getInstrumentButton());
+	}
+
+	public void addInstrument(Button buttonToAdd) {
 		int instrumentCount = synth.getInstrumentCount();
 
 		// If there are 4 instruments or more, move on
@@ -243,58 +306,29 @@ public class Controller {
 			synth.createInstrument();
 			instrumentCount++;
 
-			// Create a new Instrument button in the list and add the necessary functionality
-			Button newInstrument = new Button("Instrument " + instrumentCount);
-			newInstrument.setUserData(instrumentCount - 1);
-			newInstrument.setId("instrument" + instrumentCount);
-			newInstrument.setOnMouseClicked(event -> {
-				onInstrumentButtonClick(event);
-			});
-			newInstrument.setMaxHeight(btnAddInstrument.getMaxHeight());
-			newInstrument.setMaxWidth(btnAddInstrument.getMaxWidth());
-			newInstrument.getStyleClass().add("instrument-button");
-
-			InnerShadow shadow = new InnerShadow();
-
 			// Make sure the instrument is added to the list correctly
 			instrumentList.getChildren().remove(btnAddInstrument);
-			instrumentList.add(newInstrument, 0, instrumentCount - 1);
+			instrumentList.add(buttonToAdd, 0, instrumentCount - 1);
 			instrumentList.add(btnAddInstrument, 0, instrumentCount);
-		} else {
-			System.out.println("Max instruments");
 		}
 	}
 
-	/*
 	public void removeInstrument(Button buttonToRemove) {
 		// Get the current instrument count
-				int instrumentCount = synth.getInstrumentCount();
+		int instrumentCount = synth.getInstrumentCount();
 
-				// If there are at least 2 instruments, move on
-				if(instrumentCount > 1) {
-					// Create the instrument and increment the count
-					synth.removeInstrument();
-					instrumentCount++;
+		// If there are at least 2 instruments, move on
+		if(instrumentCount > 0) {
+			// Create the instrument and increment the count
+			synth.removeInstrument();
+			instrumentList.getChildren().remove(buttonToRemove);
 
-					// Create a new Instrument button in the list and add the necessary functionality
-					Button newInstrument = new Button("Instrument " + instrumentCount);
-					newInstrument.setUserData(instrumentCount - 1);
-					newInstrument.setId("instrument" + instrumentCount);
-					newInstrument.setOnMouseClicked(event -> {
-						onInstrumentButtonClick(event);
-					});
-					newInstrument.setMaxHeight(btnAddInstrument.getMaxHeight());
-					newInstrument.setMaxWidth(btnAddInstrument.getMaxWidth());
-
-					// Make sure the instrument is added to the list correctly
-					instrumentList.getChildren().remove(btnAddInstrument);
-					instrumentList.add(newInstrument, 0, instrumentCount - 1);
-					instrumentList.add(btnAddInstrument, 0, instrumentCount);
-				} else {
-					System.out.println("Max instruments");
-				}
+			// Make sure the add instrument is re-added to the list correctly
+			instrumentList.getChildren().remove(btnAddInstrument);
+			instrumentList.add(btnAddInstrument, 0, --instrumentCount);
+		}
 	}
-*/
+
 
 	/**
 	 * This function calls the signin function when the sign in button is clicked
@@ -718,25 +752,42 @@ public class Controller {
 	}
 
 	/**
+	 * This function calls the saveFile function when the save button is pressed
+	 *
+	 * @param e - the action event object containing information about the particular action event
+	 * @return nothing
+	 */
+	public void onSaveButtonClick(ActionEvent e){
+		saveFile(false);
+	}
+
+	/**
+	 * This function calls the loadFile function when the load button is pressed
+	 *
+	 * @param e - the action event object containing information about the particular action event
+	 * @return nothing
+	 */
+	public void onLoadButtonCLick(ActionEvent e){
+		loadFile();
+	}
+
+	/**
 	 * This function saves the project to a JSON file
 	 *
 	 * @param newFile - Whether or not to save the project as a new file
 	 * @return nothing
 	 */
-	@FXML
 	public void saveFile(boolean newFile) {
-		if(projectFile == null || !newFile)
+		if(projectFile == null || newFile)
 			projectFile = fileChooser.showSaveDialog(stage);
 
 		if(projectFile != null){
 			//Convert the synth object to JSON format
 			String projectJson = gson.toJson(new Project(synth.getInstruments(), synth.getBPM(), synth.getVolume(), noteFrequencies), Project.class);
-
+			
 			try {
-				Files.writeString(Path.of(projectFile.getAbsolutePath()), projectJson, StandardOpenOption.WRITE);
-			} catch (IOException ex) {
-				//Error here
-			}
+				Files.writeString(Path.of(projectFile.getAbsolutePath()), projectJson, StandardOpenOption.CREATE);
+			} catch (IOException ignored) {}
 		}
 	}
 
@@ -745,31 +796,118 @@ public class Controller {
 	 *
 	 * @return nothing
 	 */
-	@FXML
 	public void loadFile() {
 		File file = fileChooser.showOpenDialog(stage);
 		
 		if(file != null && file.getName().endsWith(".json")) {
 			try {
+				//Grab the json text from the supplied json file
 				String projectJson = Files.readString(Path.of(file.getAbsolutePath()));
+
+				//Deserialize the Json and construct the Project object
 				Project project = gson.fromJson(projectJson, Project.class);
 
+				//If project successfully instantiated, continue on
 				if(project != null){
-					System.out.println(project.getBpm());
-				}
+					//Set the current project file to the file opened
+					projectFile = file;
 
-				projectFile = file;
-			} catch (IOException ex) {
-				//Error here
-			}
+					//Remove the instruments from the grid and the synth
+					for(Node instrumentBtn : instrumentList.getChildren()){
+						removeInstrument((Button) instrumentBtn);
+					}
+
+					//Declare the instrument count as 0
+					int instrumentCount = 0;
+
+					//Add each instrument and update its envelope
+					for(Project.ProjectInstrument projInstrument : project.getInstruments()) {
+						onAddInstrumentClick(null);
+
+						synth.setSelectedInstrument(instrumentCount++);
+
+						ToggleButton waveformButton = null;
+
+						switch(projInstrument.getWaveformID()){
+							case Instrument.SINE_WAVE:
+								waveformButton = sineButton;
+								break;
+							case Instrument.SQUARE_WAVE:
+								waveformButton = squareButton;
+								break;
+							case Instrument.TRIANGLE_WAVE:
+								waveformButton = triangleButton;
+								break;
+							case Instrument.SAW_WAVE:
+								waveformButton = sawButton;
+								break;
+						}
+
+						//Toggle the waveform in the UI
+						waveformGroup.selectToggle(waveformButton);
+
+						//Change it in the instrument
+						changeWaveform(waveformButton);
+
+						//Grab the envelope data from the project instrument
+						double[] envelopeData = projInstrument.getEnvelopeData();
+
+						//Set the appropriate slider values in the UI
+						attackSlider.setValue(envelopeData[Instrument.ATTACK_VALUE]);
+						decaySlider.setValue(envelopeData[Instrument.DECAY_VALUE]);
+						sustainSlider.setValue(envelopeData[Instrument.SUSTAIN_VALUE]);
+						releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
+
+						//Update the instrument's envelope
+						updateEnvelope(0);
+					}
+
+					//Grab the master volume from the project
+					double masterVolume = project.getMasterVolume();
+
+					//Change it in the UI
+					volumeSlider.setValue(masterVolume);
+
+					//Update it in the synth
+					changeVolume(masterVolume);
+
+					//Grab the BPM form the project and parse it as a string
+					String bpm = String.valueOf(project.getBpm());
+
+					//Set the BPM in the UI
+					bpmLabel.setText(bpm);
+
+					//Update it in the synth
+					changeBPM(bpm);
+
+					//Unhighlight all notes
+					chordsGrid.lookupAll(".selected").forEach(node -> {
+						node.getStyleClass().remove("selected");
+					});
+
+					//Set the note frequencies from the project
+					noteFrequencies = project.getNoteFrequencies();
+
+					for(int i = 0; i < noteFrequencies.length; i++){
+						if(noteFrequencies[i] > -1){
+							int noteRow = 88 - Utils.Math.getKey(noteFrequencies[i]);
+
+							for(Node note : chordsGrid.getChildren()){
+								if(GridPane.getRowIndex(note) == noteRow && GridPane.getColumnIndex(note) == i){
+									note.getStyleClass().add("selected");
+								}
+							}
+						}
+					}
+				}
+			} catch (IOException ignored) {}
 		}
 	}
 
 	/**
-	 * Note Button class that contains the button clicked and it's grid position
+	 * Note Button class that contains the button clicked and it's selected state
 	 */
 	public class NoteButton {
-		private NoteButton previousNote;
 		private Button noteButton;
 		private boolean selected;
 
@@ -787,6 +925,30 @@ public class Controller {
 
 		public void setSelected(boolean selected){
 			this.selected = selected;
+		}
+	}
+
+	/**
+	 * Instrument Button class that contains the button clicked and it's existing state
+	 */
+	public class InstrumentButton {
+		private Button instrumentButton;
+		private boolean exists;
+
+		public Button getInstrumentButton(){
+			return instrumentButton;
+		}
+
+		public void setInstrumentButton(Button button){
+			this.instrumentButton = button;
+		}
+
+		public boolean getExists(){
+			return exists;
+		}
+
+		public void setExists(boolean exists){
+			this.exists = exists;
 		}
 	}
 }
