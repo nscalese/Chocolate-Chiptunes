@@ -21,6 +21,11 @@ public class ActionLog {
 		ActionList = ActionLog.listIterator();
 		this.controller = controller;
 	}
+
+	public void emptyLog(){
+		ActionLog.clear();
+		ActionList = ActionLog.listIterator();
+	}
 	
 	public void AddAction(Object oldValue, Object newValue, Object objectAffected, Method objectMethodToInvoke, Method controllerMethodToInvoke) {
 		//Remove any actions down the list if they exist (this only happens if you undo a bunch of actions and then perform a brand new action while you're not at the front of the list)
