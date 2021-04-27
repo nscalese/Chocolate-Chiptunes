@@ -34,7 +34,7 @@ public class Project {
     	return noteFrequencies;
 	}
     
-    private class ProjectInstrument {
+    public class ProjectInstrument {
     	private int waveformID;
     	private double[] envelopeData;
     	
