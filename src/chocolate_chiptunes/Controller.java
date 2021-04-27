@@ -100,7 +100,7 @@ public class Controller {
 	private ToggleGroup waveformGroup;
 
 	@FXML
-	private static Slider volumeSlider;
+	private Slider volumeSlider;
 
 	/**
 	 * This function instantiates the controller object, setting values like the ActionLog and the GSON serializer
@@ -784,7 +784,7 @@ public class Controller {
 		if(projectFile != null){
 			//Convert the synth object to JSON format
 			String projectJson = gson.toJson(new Project(synth.getInstruments(), synth.getBPM(), synth.getVolume(), noteFrequencies), Project.class);
-			
+
 			try {
 				Files.writeString(Path.of(projectFile.getAbsolutePath()), projectJson, StandardOpenOption.CREATE);
 			} catch (IOException ignored) {}
@@ -812,54 +812,58 @@ public class Controller {
 					//Set the current project file to the file opened
 					projectFile = file;
 
-					//Remove the instruments from the grid and the synth
-					for(Node instrumentBtn : instrumentList.getChildren()){
-						removeInstrument((Button) instrumentBtn);
-					}
+					//Grab the instruments list
+					ObservableList<Node> instrumentsList = instrumentList.getChildren();
 
-					//Declare the instrument count as 0
-					int instrumentCount = 0;
+					//Remove the instruments from the grid and the synth
+					for(int i = 0; i < instrumentsList.size(); i++ ){
+						if(instrumentsList.get(i).getId() != "btnAddInstrument")
+							removeInstrument((Button) instrumentsList.get(i));
+					}
 
 					//Add each instrument and update its envelope
 					for(Project.ProjectInstrument projInstrument : project.getInstruments()) {
-						onAddInstrumentClick(null);
+						//Only run for non-null instrument entries
+						if(projInstrument != null){
+							onAddInstrumentClick(null);
 
-						synth.setSelectedInstrument(instrumentCount++);
+							synth.setSelectedInstrument(synth.getInstrumentCount() - 1);
 
-						ToggleButton waveformButton = null;
+							ToggleButton waveformButton = null;
 
-						switch(projInstrument.getWaveformID()){
-							case Instrument.SINE_WAVE:
-								waveformButton = sineButton;
-								break;
-							case Instrument.SQUARE_WAVE:
-								waveformButton = squareButton;
-								break;
-							case Instrument.TRIANGLE_WAVE:
-								waveformButton = triangleButton;
-								break;
-							case Instrument.SAW_WAVE:
-								waveformButton = sawButton;
-								break;
+							switch(projInstrument.getWaveformID()){
+								case Instrument.SINE_WAVE:
+									waveformButton = sineButton;
+									break;
+								case Instrument.SQUARE_WAVE:
+									waveformButton = squareButton;
+									break;
+								case Instrument.TRIANGLE_WAVE:
+									waveformButton = triangleButton;
+									break;
+								case Instrument.SAW_WAVE:
+									waveformButton = sawButton;
+									break;
+							}
+
+							//Toggle the waveform in the UI
+							waveformGroup.selectToggle(waveformButton);
+
+							//Change it in the instrument
+							changeWaveform(waveformButton);
+
+							//Grab the envelope data from the project instrument
+							double[] envelopeData = projInstrument.getEnvelopeData();
+
+							//Set the appropriate slider values in the UI
+							attackSlider.setValue(envelopeData[Instrument.ATTACK_VALUE]);
+							decaySlider.setValue(envelopeData[Instrument.DECAY_VALUE]);
+							sustainSlider.setValue(envelopeData[Instrument.SUSTAIN_VALUE]);
+							releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
+
+							//Update the instrument's envelope
+							updateEnvelope(0);
 						}
-
-						//Toggle the waveform in the UI
-						waveformGroup.selectToggle(waveformButton);
-
-						//Change it in the instrument
-						changeWaveform(waveformButton);
-
-						//Grab the envelope data from the project instrument
-						double[] envelopeData = projInstrument.getEnvelopeData();
-
-						//Set the appropriate slider values in the UI
-						attackSlider.setValue(envelopeData[Instrument.ATTACK_VALUE]);
-						decaySlider.setValue(envelopeData[Instrument.DECAY_VALUE]);
-						sustainSlider.setValue(envelopeData[Instrument.SUSTAIN_VALUE]);
-						releaseSlider.setValue(envelopeData[Instrument.RELEASE_VALUE]);
-
-						//Update the instrument's envelope
-						updateEnvelope(0);
 					}
 
 					//Grab the master volume from the project
@@ -888,17 +892,23 @@ public class Controller {
 					//Set the note frequencies from the project
 					noteFrequencies = project.getNoteFrequencies();
 
+					//Highlight the selected notes and add them to the selectedNotes array
 					for(int i = 0; i < noteFrequencies.length; i++){
 						if(noteFrequencies[i] > -1){
 							int noteRow = 88 - Utils.Math.getKey(noteFrequencies[i]);
 
 							for(Node note : chordsGrid.getChildren()){
-								if(GridPane.getRowIndex(note) == noteRow && GridPane.getColumnIndex(note) == i){
+								Integer gridRow = GridPane.getRowIndex(note), gridCol = GridPane.getColumnIndex(note);
+								if(gridRow != null && gridCol != null && GridPane.getRowIndex(note) == noteRow && GridPane.getColumnIndex(note) == i){
 									note.getStyleClass().add("selected");
+									selectedNotes[i] = (Button)note;
 								}
 							}
 						}
 					}
+
+					//Reset the action log
+					actionLog.emptyLog();
 				}
 			} catch (IOException ignored) {}
 		}
