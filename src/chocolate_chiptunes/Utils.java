@@ -25,6 +25,10 @@ public class Utils {
             return pow(root(2, 12), keyNum - 49) * 440;
         }
 
+        public static int getKey(double frequency){
+            return (int) round(log(frequency/440) / log (root(2, 12))) + 49;
+        }
+
         public static double root(double num, double root) { return pow(E, log(num) / root); }
     }
 }
