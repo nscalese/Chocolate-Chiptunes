@@ -40,16 +40,7 @@ An SNES/NES style music creation tool.
 3. After you're done, you should be able to run the program by right-clicking on Main.java and then clicking "Run 'Main.main()'"
 ## Demo video
 
-Upload your demo video to youtube and put a link here. Basically, the video content is very much like the quick live demo of your product with the followings:
-1. Introduction
-2. How to run the app
-3. Quick walkthrough of all the functions and their sub functions of your app one by one
-
-Please make it short and interesting!
-
-Sample: https://www.youtube.com/watch?v=Pr-JMqTkdEM
-
-How to record your screen: https://www.techradar.com/how-to/record-your-screen
+Video: https://www.youtube.com/watch?v=ZNwImpA0u_g
 
 ## Contributors
 

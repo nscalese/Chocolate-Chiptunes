@@ -156,31 +156,35 @@ public class SignUpForm {
         usercreation_message.setFont(Font.font("Courier", FontWeight.NORMAL, 30));
         grid.add(usercreation_message, 0, 7, 2, 1);
         signUpButton.setOnAction(e -> {
-            boolean success = helper.SignUpUser(Username.getText(), Password.getText(), Username.getText(), nickname.getText());
-            if (success) {
+            if (!Password.getText().equals(Passwordr.getText())) {
 
-                System.out.println("Enter your validation code from email");
-                SignUpConformation.display("Chocolate Chiptunes", "Confirm User", Username.getText());
-
-                window.close();
-
-            } else {
-
-                if (!Password.getText().equals(Passwordr.getText())) {
-
-                    usercreation_message.setText("Passwords are not the same");
-
-                } else {
-
-                    System.out.println("User creation failed");
-                    usercreation_message.setText("User creation failed");
-                }
-
-                usercreation_message.setAlignment(Pos.CENTER);
+                usercreation_message.setText("Passwords are not the same");
                 usercreation_message.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
 
+            }else{
+                boolean success = helper.SignUpUser(Username.getText(), Password.getText(), Username.getText(), nickname.getText());
+                if (success) {
 
+                    System.out.println("Enter your validation code from email");
+                    SignUpConformation.display("Chocolate Chiptunes", "Confirm User", Username.getText());
+
+                    window.close();
+
+                } else {
+                        System.out.println("User creation failed");
+                        usercreation_message.setText("User creation failed");
+
+                    usercreation_message.setAlignment(Pos.CENTER);
+                    usercreation_message.setStyle("-fx-text-fill: #e30b0b; -fx-font-size: 16px;");
+
+
+                }
             }
+
+
+
+
+
         });
         cancelButton.setOnAction(e -> {
             answer = false;
