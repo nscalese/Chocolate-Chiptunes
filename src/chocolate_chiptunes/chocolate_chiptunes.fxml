@@ -261,7 +261,7 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                             <children>
-                                                <Label text="Account Login" fx:id="welcomelbl" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                <Label fx:id="welcomelbl" text="Account Login" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                                     <font>
                                                         <Font name="System Bold" size="20.0" />
                                                     </font>
@@ -311,12 +311,12 @@
                                                         <Font name="System Bold" size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button mnemonicParsing="false" prefWidth="200.0" styleClass="account-button" text="[ Save Project ]" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                <Button mnemonicParsing="false" onAction="#onSaveButtonClick" prefWidth="200.0" styleClass="account-button" text="[ Save Project ]" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                                     <font>
                                                         <Font name="System Bold" size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button mnemonicParsing="false" prefWidth="200.0" styleClass="account-button" text="[ Load Project ]" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                <Button mnemonicParsing="false" onAction="#onLoadButtonCLick" prefWidth="200.0" styleClass="account-button" text="[ Load Project ]" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                                     <font>
                                                         <Font name="System Bold" size="16.0" />
                                                     </font>
@@ -384,7 +384,7 @@
                     </children></HBox>
                 <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                     <children>
-                        <Button id="piano-button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showPianoRoll" onMouseClicked="#showPianoRoll" styleClass="switch-button" text="Piano Roll" HBox.hgrow="ALWAYS">
+                        <Button id="piano-button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showPianoRoll" styleClass="switch-button" text="Piano Roll" HBox.hgrow="ALWAYS">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
@@ -518,6 +518,16 @@
                                         <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                         <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                         <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
                                     </rowConstraints>
                                     <children>
                                         <Label text="C8" textFill="WHITE" GridPane.rowIndex="0">

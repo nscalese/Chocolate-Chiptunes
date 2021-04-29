@@ -63,7 +63,25 @@ public class Synthesizer extends Circuit {
         if(instrumentCount <= 4) {
             instruments[instrumentCount - 1] = new Instrument();
         } else {
-            System.out.println("Max instruments created.");
+            System.out.println("Max number of instruments created.");
+        }
+    }
+
+    /* Called when the undo function is used
+     * Decrements the instrument count and removed the instrument from the list
+     */
+    public void removeInstrument() {
+        if(selectedInstrumentID == instrumentCount - 1){
+            disconnectInstrument();
+            instrumentCount--;
+            //Prevent reconnecting when there are no instruments
+            if(instrumentCount > 1){
+                instruments[instrumentCount] = null;
+                setSelectedInstrument(instrumentCount - 1);
+                connectInstrument();
+            }
+        } else {
+            instruments[--instrumentCount] = null;
         }
     }
 
@@ -107,12 +125,6 @@ public class Synthesizer extends Circuit {
         instruments[selectedInstrumentID].getOscillator().output.connect(0, out.input, 1);
     }
 
-    // Reset output
-    public void resetOut() {
-        out.stop();
-        out.start();
-    }
-
     // Change the total volume
     public void changeVolume(double volume) {
         //System.out.println(envelopePlayer.amplitude.get() + " AMPLITUDE BEFORE" + " " + volume);
@@ -122,11 +134,6 @@ public class Synthesizer extends Circuit {
     // Get the total volume
     public double getVolume() {
         return envelopePlayer.amplitude.get();
-    }
-    
-    // Get the current time
-    public double getCurrentTime() {
-    	return synth.getCurrentTime();
     }
     
     // Get the current BPM
@@ -144,7 +151,7 @@ public class Synthesizer extends Circuit {
             instruments[selectedInstrumentID].getOscillator().frequency.set(KEY_FREQUENCIES.get(keyChar));
             out.start();
             envelopePlayer.dataQueue.queueOn(instruments[selectedInstrumentID].getEnvelope());
-        } catch (NullPointerException e) {
+        } catch (NullPointerException ignored) {
 
         }
     }
